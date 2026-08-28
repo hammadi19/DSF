@@ -50,22 +50,13 @@ export default function Home() {
               <Link className="ml-4 text-[var(--red)]" href="/about">Click here +</Link>
             </div>
           </div>
-          <form className="hidden rounded-lg border border-neutral-200 bg-white p-10 text-[var(--foreground)] shadow-2xl lg:grid lg:gap-4">
+          <form className="hidden rounded-lg border border-white/70 bg-white/90 p-10 text-[var(--foreground)] shadow-2xl backdrop-blur-md lg:grid lg:gap-4">
             <h2 className="mb-3 text-center text-[30px] font-medium leading-10">Find Your Mobile Service</h2>
             <select aria-label="Select vehicle make"><option>Vehicle make</option><option>Audi</option><option>Volkswagen</option><option>BMW</option><option>Other</option></select>
             <select aria-label="Select service"><option>Service required</option><option>Servicing</option><option>Diagnostics</option><option>Brakes</option><option>Battery</option></select>
             <select aria-label="Select location"><option>Your location</option><option>Shepshed</option><option>Leicester</option><option>Loughborough</option><option>Elsewhere in Leicestershire</option></select>
             <select aria-label="Select appointment"><option>Appointment type</option><option>Home</option><option>Workplace</option><option>Roadside</option></select>
             <select aria-label="Select vehicle specialist"><option>Specialist support</option><option>Audi</option><option>Volkswagen</option><option>BMW</option><option>All makes</option></select>
-            <div className="mt-2">
-              <p className="text-sm font-bold text-[var(--muted)]">Area: <strong className="text-[var(--foreground)]">All of Leicestershire</strong></p>
-              <div className="mt-4 h-1.5 bg-neutral-200">
-                <div className="relative h-full w-2/3 bg-[var(--red)]">
-                  <span className="absolute -left-1 -top-1.5 size-4 rounded bg-[var(--red)]" />
-                  <span className="absolute -right-1 -top-1.5 size-4 rounded bg-[var(--red)]" />
-                </div>
-              </div>
-            </div>
             <Link className="button mt-2 w-full" href="/contact">Search Availability</Link>
           </form>
         </div>
