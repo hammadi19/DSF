@@ -1,21 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f6f4;
-  --foreground: #151515;
-  --muted: #66615c;
-  --line: #dfddd8;
-  --red: #e42025;
-  --red-dark: #b91519;
-  --steel: #2f363d;
+  --background: #f7f7f7;
+  --foreground: #323232;
+  --muted: #999999;
+  --line: #e8e8e8;
+  --red: #db2d2e;
+  --red-dark: #15181f;
+  --steel: #323232;
   --green: #30a46c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-outfit);
 }
 
 @layer base {
@@ -29,7 +28,10 @@
 
   body {
     @apply m-0 bg-[var(--background)] text-[var(--foreground)];
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-outfit), Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
   }
 
   a {
@@ -44,7 +46,8 @@
   input,
   select,
   textarea {
-    @apply min-h-12 w-full border border-[var(--line)] bg-white px-3.5 py-3 font-[inherit] text-[var(--foreground)];
+    @apply min-h-12 w-full border border-[var(--line)] bg-white px-[18px] py-3 font-[inherit] text-sm text-[var(--foreground)] outline-none transition duration-500 focus:border-[var(--red)];
+    border-radius: 0;
   }
 
   textarea {
@@ -57,32 +60,32 @@
 }
 
 @utility section-y {
-  @apply py-14 lg:py-20;
+  @apply py-20;
 }
 
 @layer components {
   .button {
-    @apply mt-7 inline-flex justify-center bg-[var(--red)] px-6 py-4 font-black text-white transition hover:bg-[var(--red-dark)] focus-visible:bg-[var(--red-dark)];
+    @apply mt-7 inline-flex justify-center bg-[var(--red)] px-5 py-2 text-sm font-semibold leading-6 text-white transition duration-500 hover:bg-[var(--red-dark)] focus-visible:bg-[var(--red-dark)];
   }
 
   .eyebrow {
-    @apply mb-3 text-sm font-black uppercase text-[var(--red)];
+    @apply mb-3 text-[17px] font-medium leading-7 text-[var(--red)];
   }
 
   .section-heading {
-    @apply mb-9 max-w-3xl;
+    @apply mb-10 max-w-3xl;
   }
 
   .section-heading h2 {
-    @apply text-4xl font-black leading-tight sm:text-5xl;
+    @apply text-[34px] font-medium leading-[44px] sm:text-[40px] sm:leading-[50px];
   }
 
   .form-label {
-    @apply grid gap-2 text-sm font-bold text-[var(--steel)];
+    @apply grid gap-2 text-sm font-semibold text-[var(--steel)];
   }
 
   .header-link {
-    @apply inline-flex items-center gap-1 whitespace-nowrap transition hover:text-[var(--red)];
+    @apply inline-flex items-center gap-1 whitespace-nowrap text-[17px] font-medium leading-6 transition duration-500 hover:text-[var(--red)];
   }
 
   .header-social {
@@ -90,15 +93,15 @@
   }
 
   .hero-cta {
-    @apply grid min-w-52 grid-cols-[auto_1fr] items-center gap-x-4 bg-[var(--red)] px-7 py-4 text-white transition hover:bg-[var(--red-dark)];
+    @apply grid min-w-52 grid-cols-[auto_1fr] items-center gap-x-4 bg-[var(--red)] px-7 py-3 text-white transition duration-500 hover:bg-[var(--red-dark)];
   }
 
   .hero-cta span {
-    @apply border-l border-white/35 pl-4 text-sm font-black leading-tight;
+    @apply border-l border-white/35 pl-4 text-xs font-semibold leading-tight;
   }
 
   .hero-cta strong {
-    @apply col-start-2 block border-l border-white/35 pl-4 text-xl leading-tight;
+    @apply col-start-2 block border-l border-white/35 pl-4 text-lg font-semibold leading-tight;
   }
 
   .process-step {
@@ -114,7 +117,7 @@
   }
 
   .why-card {
-    @apply min-h-[260px] border border-[var(--line)] bg-white p-8 transition open:border-[var(--red)] open:shadow-2xl;
+    @apply min-h-[260px] border border-[var(--line)] bg-white p-8 transition duration-500 open:border-[var(--red)] open:shadow-2xl;
   }
 
   .why-card summary,
@@ -128,7 +131,7 @@
   }
 
   .why-card summary::after {
-    @apply text-lg font-black uppercase text-[var(--steel)];
+    @apply text-base font-semibold uppercase tracking-wide text-[var(--steel)];
     content: "Car care detail";
   }
 
@@ -141,15 +144,15 @@
   }
 
   .blog-date {
-    @apply absolute right-8 top-8 grid size-36 place-items-center bg-[var(--red)] text-center text-3xl font-black leading-none text-white;
+    @apply absolute right-5 top-5 grid h-[90px] w-[100px] place-items-center bg-[var(--red)] text-center text-lg font-semibold leading-[22px] text-white;
   }
 
   .blog-date strong {
-    @apply block text-6xl leading-none;
+    @apply block text-[34px] font-bold leading-none;
   }
 
   .footer-title {
-    @apply relative mb-6 text-lg font-black text-white;
+    @apply relative mb-6 text-[18px] font-semibold text-white;
   }
 
   .footer-title::after {
@@ -162,7 +165,7 @@
   }
 
   .footer-action {
-    @apply inline-flex max-w-44 justify-center rounded bg-white px-5 py-2.5 text-sm font-black text-neutral-950 transition hover:bg-[var(--red)] hover:text-white;
+    @apply inline-flex max-w-44 justify-center rounded bg-white px-5 py-2.5 text-sm font-semibold text-neutral-950 transition duration-500 hover:bg-[var(--red)] hover:text-white;
   }
 
   .line-clamp-3 {
@@ -188,12 +191,12 @@
   }
 
   .county-ring span {
-    @apply text-xl font-black sm:text-4xl;
+    @apply text-xl font-semibold sm:text-4xl;
     transform: rotate(8deg);
   }
 
   .town {
-    @apply absolute rounded-full bg-white/90 px-3 py-2 text-xs font-black not-italic text-neutral-950;
+    @apply absolute rounded-full bg-white/90 px-3 py-2 text-xs font-semibold not-italic text-neutral-950;
   }
 
   .town-1 { left: 45%; top: 44%; }

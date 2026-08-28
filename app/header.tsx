@@ -6,8 +6,8 @@ import { contact } from "./dsf-data";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 -mb-[96px] border-b border-white/15 bg-black/35 text-white backdrop-blur-sm">
-      <div className="section-container grid min-h-24 items-center gap-5 py-4 lg:grid-cols-[250px_1fr_auto]">
+    <header className="sticky top-0 z-50 -mb-[102px] border-b border-white/15 bg-black/35 text-white backdrop-blur-sm">
+      <div className="section-container grid min-h-[102px] items-center gap-5 py-4 lg:grid-cols-[250px_1fr_auto]">
         <Link href="/" aria-label="DSF Auto Care home">
           <Image
             className="h-14 w-44 rounded object-cover"
@@ -19,7 +19,7 @@ export function Header() {
           />
         </Link>
         <nav
-          className="flex gap-5 overflow-x-auto text-base font-bold lg:justify-center xl:gap-9"
+          className="flex gap-5 overflow-x-auto lg:justify-center xl:gap-9"
           aria-label="Main navigation"
         >
           <Link className="header-link text-[var(--red)]" href="/">Home <ChevronDown aria-hidden="true" className="size-4" /></Link>
@@ -45,10 +45,10 @@ export function Header() {
             </span>
             <span className="grid text-sm font-bold leading-tight text-neutral-200">
               Have any Questions?
-              <strong className="mt-1 text-lg text-white">{contact.phone}</strong>
+              <strong className="mt-1 text-xl font-medium text-white">{contact.phone}</strong>
             </span>
           </a>
-          <Link className="bg-[var(--red)] px-9 py-4 font-black text-white transition hover:bg-[var(--red-dark)]" href="/contact">
+          <Link className="bg-[var(--red)] px-9 py-[15px] text-base font-semibold text-white transition duration-500 hover:bg-[var(--red-dark)]" href="/contact">
             Book Now
           </Link>
         </div>

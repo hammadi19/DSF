@@ -49,7 +49,7 @@ export function Footer() {
             width={170}
             height={75}
           />
-          <div className="flex gap-5 text-lg font-black" aria-label="Social links">
+          <div className="flex gap-5 text-lg font-semibold" aria-label="Social links">
             <a href={contact.facebook} aria-label="DSF Autocare on Facebook"><FaFacebookF aria-hidden="true" /></a>
             <a href={`https://wa.me/${contact.whatsapp}`} aria-label="Message DSF Autocare on WhatsApp"><FaWhatsapp aria-hidden="true" /></a>
             <a href={`mailto:${contact.email}`} aria-label="Email DSF Autocare"><Mail aria-hidden="true" className="size-[1em]" /></a>
