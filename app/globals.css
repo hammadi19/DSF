@@ -117,7 +117,8 @@
   }
 
   .why-card {
-    @apply min-h-[260px] border border-[var(--line)] bg-white p-8 transition duration-500 open:border-[var(--red)] open:shadow-2xl;
+    @apply aspect-square shrink-0 snap-start overflow-y-auto border border-[var(--line)] bg-white p-8 transition duration-500 open:border-[var(--red)] open:shadow-2xl;
+    width: 82vw;
   }
 
   .why-card summary,
@@ -213,5 +214,17 @@
 
   .town {
     @apply px-2 py-1.5 text-[0.7rem];
+  }
+}
+
+@media (min-width: 640px) {
+  .why-card {
+    width: calc((100% - 28px) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-card {
+    width: calc((100% - 84px) / 4);
   }
 }

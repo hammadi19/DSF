@@ -229,7 +229,7 @@ export function WhyChoose() {
           <p className="eyebrow">Why Choose DSF Auto Care</p>
           <h2>Straight answers, careful workmanship, and the workshop brought to you.</h2>
         </div>
-        <div className="grid items-start gap-7 md:grid-cols-2 xl:grid-cols-5">
+        <div className="flex snap-x gap-7 overflow-x-auto pb-5">
           {whyChoose.map((item, index) => (
             <details key={item.title} className="why-card" open={index === 0}>
               <summary className="grid cursor-pointer gap-7">
