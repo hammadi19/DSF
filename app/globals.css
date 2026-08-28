@@ -137,7 +137,7 @@
   }
 
   .why-card {
-    @apply relative grid aspect-square shrink-0 snap-start overflow-hidden border border-[var(--line)] bg-white p-8 transition duration-500 hover:border-[var(--red)] hover:bg-[var(--red)];
+    @apply relative grid aspect-square shrink-0 snap-start content-start gap-8 overflow-hidden border border-[var(--line)] bg-white p-8 transition duration-500 hover:border-[var(--red)] hover:bg-[var(--red)];
     width: 82vw;
   }
 

@@ -62,7 +62,6 @@ const processSteps = [
 
 const featureIcons = [MapPin, ShieldCheck, Wrench, Sparkles];
 const serviceIcons = [ClipboardList, Gauge, Wrench, BatteryCharging, ShieldCheck, Sparkles];
-const whyIcons = [ShieldCheck, CheckCircle2, Gauge, Wrench, MapPin];
 
 export function PageHero({ title, text, image }: { title: string; text: string; image: string }) {
   return (
@@ -230,20 +229,13 @@ export function WhyChoose() {
           <h2>Straight answers, careful workmanship, and the workshop brought to you.</h2>
         </div>
         <div className="why-carousel flex snap-x gap-7 overflow-x-auto pb-5">
-          {whyChoose.map((item, index) => {
-            const Icon = whyIcons[index] ?? CheckCircle2;
-
-            return (
-              <article key={item.title} className="why-card group">
-                <span className="flex items-center justify-between">
-                  <span className="grid size-16 place-items-center rounded-full border-[3px] border-[var(--red)] text-2xl font-semibold text-[var(--red)] transition duration-500 group-hover:border-white group-hover:text-white">{index + 1}</span>
-                  <Icon aria-hidden="true" className="size-11 text-[var(--red)] transition duration-500 group-hover:text-white" strokeWidth={1.8} />
-                </span>
-                <strong className="mt-auto block max-w-[12ch] text-[28px] font-semibold leading-[34px] transition duration-500 group-hover:text-white">{item.title}</strong>
-                <span className="h-1 w-14 bg-[var(--red)] transition duration-500 group-hover:bg-white" />
-              </article>
-            );
-          })}
+          {whyChoose.map((item, index) => (
+            <article key={item.title} className="why-card group">
+              <span className="grid size-16 place-items-center rounded-full border-[3px] border-[var(--red)] text-2xl font-semibold text-[var(--red)] transition duration-500 group-hover:border-white group-hover:text-white">{index + 1}</span>
+              <strong className="block max-w-[12ch] text-[28px] font-semibold leading-[34px] transition duration-500 group-hover:text-white">{item.title}</strong>
+              <span className="h-1 w-14 bg-[var(--red)] transition duration-500 group-hover:bg-white" />
+            </article>
+          ))}
         </div>
       </div>
     </section>
