@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { contact, features, services, towns, whyChoose } from "./dsf-data";
@@ -6,7 +7,7 @@ export function Header() {
   return (
     <header className="site-header">
       <Link className="brand" href="/">
-        <img src="/assets/dsf/logo.jpg" alt="DSF Auto Care" />
+        <Image src="/assets/dsf/logo.jpg" alt="DSF Auto Care" width={132} height={58} priority />
       </Link>
       <nav aria-label="Main navigation">
         <Link href="/">Home</Link>
@@ -26,7 +27,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <img src="/assets/dsf/logo.jpg" alt="DSF Auto Care" />
+        <Image src="/assets/dsf/logo.jpg" alt="DSF Auto Care" width={180} height={79} />
         <p>Mobile vehicle servicing and repairs across Leicestershire.</p>
       </div>
       <div>
@@ -46,7 +47,7 @@ export function Footer() {
 export function PageHero({ title, text, image }: { title: string; text: string; image: string }) {
   return (
     <section className="page-hero">
-      <img src={image} alt="" />
+      <Image src={image} alt="" fill priority sizes="100vw" />
       <div>
         <p>DSF Auto Care</p>
         <h1>{title}</h1>
@@ -148,7 +149,7 @@ export function ServicesGrid() {
         {services.map((service) => (
           <details className="service-card" key={service.title}>
             <summary>
-              <img src={service.image} alt="" />
+              <Image src={service.image} alt="" width={720} height={450} sizes="(max-width: 980px) 50vw, 33vw" />
               <span>{service.title}</span>
             </summary>
             <p>{service.intro}</p>
