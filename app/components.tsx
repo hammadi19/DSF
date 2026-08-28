@@ -2,6 +2,42 @@ import Image from "next/image";
 import Link from "next/link";
 import { contact, features, services, towns, whyChoose } from "./dsf-data";
 
+const serviceBrands = [
+  { name: "Audi", count: "Specialist" },
+  { name: "Volkswagen", count: "Specialist" },
+  { name: "BMW", count: "Specialist" },
+  { name: "Diagnostics", count: "Mobile" },
+  { name: "Servicing", count: "On-site" },
+  { name: "Repairs", count: "All makes" },
+];
+
+const processSteps = [
+  {
+    title: "Personal Attention",
+    text: "Tell us what your vehicle needs and we will guide you clearly.",
+  },
+  {
+    title: "Receive Up Front Quote",
+    text: "You get honest pricing before work begins.",
+  },
+  {
+    title: "Mobile Appointment",
+    text: "We come to your home, workplace or roadside location.",
+  },
+  {
+    title: "Share Requirement",
+    text: "Diagnostics, servicing and repairs are planned around your vehicle.",
+  },
+  {
+    title: "Pay Post Service",
+    text: "Work is completed carefully before payment is taken.",
+  },
+  {
+    title: "Schedule Maintenance",
+    text: "Keep your car safe and reliable with regular checks.",
+  },
+];
+
 export function PageHero({ title, text, image }: { title: string; text: string; image: string }) {
   return (
     <section className="relative min-h-[420px] overflow-hidden">
@@ -28,9 +64,33 @@ export function ContactStrip() {
   );
 }
 
+export function BrandSearch() {
+  return (
+    <section className="bg-white py-12">
+      <div className="section-container">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <h2 className="text-xl font-black">I Want Search</h2>
+          <div className="flex gap-2 text-xs font-black">
+            <span className="bg-[var(--red)] px-4 py-2 text-white">Browse Service</span>
+            <span className="border border-[var(--line)] px-4 py-2">Browse Vehicle</span>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {serviceBrands.map((item) => (
+            <article className="relative grid min-h-28 place-items-center border border-[var(--line)] bg-white p-5 text-center shadow-sm" key={item.name}>
+              <span className="absolute right-3 top-2 text-xs font-black text-[var(--muted)]">{item.count}</span>
+              <strong className="text-lg font-black">{item.name}</strong>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function FeatureGrid() {
   return (
-    <section className="section-y" aria-label="DSF Autocare highlights">
+    <section className="section-y pt-4" aria-label="DSF Autocare highlights">
       <div className="section-container grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {features.map((item) => (
           <article className="min-h-44 border border-[var(--line)] bg-white p-7" key={item.title}>
@@ -38,6 +98,59 @@ export function FeatureGrid() {
             <p className="leading-7 text-[var(--muted)]">{item.text}</p>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+export function FeaturedServices() {
+  return (
+    <section className="section-y bg-white">
+      <div className="section-container">
+        <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl font-black leading-tight">Our Featured Services</h2>
+            <p className="mt-4 leading-7 text-[var(--muted)]">Mobile servicing, repairs and diagnostics delivered with professional care across Leicestershire.</p>
+          </div>
+          <Link className="bg-[var(--red)] px-6 py-4 text-sm font-black text-white transition hover:bg-[var(--red-dark)]" href="/services">All Services</Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service) => (
+            <article className="border border-[var(--line)] bg-white shadow-sm" key={service.title}>
+              <div className="relative">
+                <Image className="aspect-[1.55] w-full object-cover" src={service.image} alt="" width={720} height={465} sizes="(max-width: 980px) 50vw, 33vw" />
+                <span className="absolute left-0 top-0 bg-[var(--red)] px-3 py-2 text-xs font-black uppercase text-white">Mobile</span>
+              </div>
+              <div className="p-5">
+                <p className="mb-2 text-xs font-black uppercase text-[var(--red)]">DSF Autocare</p>
+                <h3 className="text-xl font-black">{service.title}</h3>
+                <p className="mt-3 line-clamp-3 leading-7 text-[var(--muted)]">{service.intro}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function StatsBand() {
+  return (
+    <section className="bg-white pb-16">
+      <div className="section-container">
+        <div className="grid gap-px bg-[var(--red)] p-7 text-white md:grid-cols-4">
+          {[
+            ["20+", "Years Experience"],
+            ["5", "Star Google Rating"],
+            ["100%", "Mobile Service"],
+            ["All", "Leicestershire"],
+          ].map(([value, label]) => (
+            <article className="border-white/25 px-5 py-3 md:border-r last:border-r-0" key={label}>
+              <strong className="block text-3xl font-black">{value}</strong>
+              <span className="text-sm font-bold">{label}</span>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -67,6 +180,46 @@ export function WhyChoose() {
   );
 }
 
+export function WorkProcess() {
+  return (
+    <section className="section-y bg-white">
+      <div className="section-container">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <h2 className="text-4xl font-black leading-tight">Our Work Process</h2>
+          <p className="mt-4 leading-7 text-[var(--muted)]">A straightforward mobile service from first message to final vehicle health check.</p>
+        </div>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px_1fr]">
+          <div className="grid gap-8">
+            {processSteps.slice(0, 3).map((step) => (
+              <article className="flex gap-4" key={step.title}>
+                <span className="grid size-12 shrink-0 place-items-center border-2 border-[var(--red)] text-xl font-black text-[var(--red)]">+</span>
+                <div>
+                  <h3 className="font-black">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{step.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="relative mx-auto aspect-[0.72] w-full max-w-[360px] overflow-hidden">
+            <Image className="h-full w-full rounded-full object-cover" src="/assets/dsf/landing-2.jpg" alt="" width={520} height={720} />
+          </div>
+          <div className="grid gap-8">
+            {processSteps.slice(3).map((step) => (
+              <article className="flex gap-4 lg:flex-row-reverse lg:text-right" key={step.title}>
+                <span className="grid size-12 shrink-0 place-items-center border-2 border-[var(--red)] text-xl font-black text-[var(--red)]">+</span>
+                <div>
+                  <h3 className="font-black">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{step.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ServiceArea() {
   return (
     <section className="bg-neutral-950 py-20 text-white">
@@ -89,19 +242,62 @@ export function ServiceArea() {
 
 export function ContactSection() {
   return (
-    <section className="section-y bg-white" id="contact">
-      <div className="section-container grid gap-12 lg:grid-cols-[1fr_minmax(320px,470px)]">
-        <div>
+    <section className="relative overflow-hidden bg-neutral-950 py-20 text-white" id="contact">
+      <Image className="object-cover opacity-20" src="/assets/dsf/landing-3.jpg" alt="" fill sizes="100vw" />
+      <div className="section-container relative z-10 grid gap-12 lg:grid-cols-[1fr_minmax(320px,470px)]">
+        <div className="self-center">
           <p className="eyebrow">Contact Us</p>
           <h2 className="text-4xl font-black leading-tight sm:text-5xl">Ready to book mobile vehicle servicing?</h2>
-          <span className="mt-5 block max-w-2xl leading-8 text-[var(--muted)]">Call, email or message on WhatsApp and DSF Autocare will arrange a convenient appointment across Leicestershire.</span>
+          <span className="mt-5 block max-w-2xl leading-8 text-neutral-200">Call, email or message on WhatsApp and DSF Autocare will arrange a convenient appointment across Leicestershire.</span>
+          <div className="mt-10 flex items-center gap-4 border-t border-white/15 pt-8">
+            <span className="grid size-14 place-items-center rounded-full bg-[var(--red)] text-2xl font-black">C</span>
+            <div>
+              <h3 className="font-black">Have Any Question? Find Your Solution</h3>
+              <a className="mt-1 block text-neutral-300" href={`tel:${contact.phone.replaceAll(" ", "")}`}>Call : {contact.phone}</a>
+            </div>
+          </div>
         </div>
-        <form className="grid gap-4 border border-[var(--line)] bg-stone-100 p-6">
+        <form className="grid gap-4 rounded-md bg-white p-7 text-[var(--foreground)] shadow-2xl">
+          <h3 className="text-xl font-black">Fulfill Your Requirements</h3>
           <label className="form-label">Name<input type="text" name="name" placeholder="Your name" /></label>
           <label className="form-label">Phone<input type="tel" name="phone" placeholder="Your phone number" /></label>
           <label className="form-label">Message<textarea name="message" placeholder="Tell us what your vehicle needs" /></label>
-          <a className="button" href={`tel:${contact.phone.replaceAll(" ", "")}`}>Call DSF Autocare</a>
+          <a className="button mt-0" href={`tel:${contact.phone.replaceAll(" ", "")}`}>Send Message</a>
         </form>
+      </div>
+    </section>
+  );
+}
+
+export function ArticleCards() {
+  const articles = [
+    { title: "When Your Vehicle Needs Diagnostics", image: "/assets/dsf/diagnostics.webp" },
+    { title: "Keeping Brakes Safe Between Services", image: "/assets/dsf/brakes.jpg" },
+    { title: "Why Regular Oil Changes Matter", image: "/assets/dsf/landing-3.jpg" },
+  ];
+
+  return (
+    <section className="section-y bg-white">
+      <div className="section-container">
+        <div className="mx-auto mb-9 max-w-3xl text-center">
+          <h2 className="text-4xl font-black leading-tight">Our Recent News & Articles</h2>
+          <p className="mt-4 leading-7 text-[var(--muted)]">Helpful maintenance notes and mobile service reminders from DSF Autocare.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {articles.map((article) => (
+            <article className="border border-[var(--line)] bg-white" key={article.title}>
+              <div className="relative">
+                <Image className="aspect-[1.8] w-full object-cover" src={article.image} alt="" width={640} height={360} />
+                <span className="absolute right-4 top-0 bg-[var(--red)] px-4 py-3 text-center text-sm font-black text-white">DSF<br />Tip</span>
+              </div>
+              <div className="p-5">
+                <p className="text-xs font-bold uppercase text-[var(--muted)]">Vehicle Care</p>
+                <h3 className="mt-3 text-lg font-black">{article.title}</h3>
+                <Link className="mt-4 inline-block text-sm font-black text-[var(--red)]" href="/services">Read More +</Link>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

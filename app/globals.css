@@ -42,6 +42,7 @@
   }
 
   input,
+  select,
   textarea {
     @apply min-h-12 w-full border border-[var(--line)] bg-white px-3.5 py-3 font-[inherit] text-[var(--foreground)];
   }
@@ -101,6 +102,13 @@
 
   .service-card {
     @apply overflow-hidden border border-[var(--line)] bg-white open:border-[var(--red)];
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 
   .map-panel {
