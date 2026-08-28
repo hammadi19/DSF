@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, Wrench } from "lucide-react";
 import { contact } from "./dsf-data";
 import {
   ArticleCards,
@@ -34,10 +35,12 @@ export default function Home() {
             <p className="mt-7 max-w-3xl text-xl font-semibold leading-9 text-white">Professional servicing, diagnostics, brakes, batteries and hidden feature coding brought to your home, workplace or roadside.</p>
             <div className="mt-8 flex flex-wrap gap-5">
               <Link className="hero-cta" href="/contact">
+                <Phone aria-hidden="true" className="size-8" />
                 <span>Call DSF</span>
                 <strong>{contact.phone}</strong>
               </Link>
               <Link className="hero-cta" href="/services">
+                <Wrench aria-hidden="true" className="size-8" />
                 <span>View Mobile</span>
                 <strong>Services</strong>
               </Link>

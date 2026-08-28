@@ -1,42 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  BatteryCharging,
+  CalendarCheck,
+  Car,
+  CheckCircle2,
+  ClipboardList,
+  Gauge,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Wrench,
+} from "lucide-react";
 import { contact, features, services, towns, whyChoose } from "./dsf-data";
 
 const serviceBrands = [
-  { name: "Audi", count: "Specialist" },
-  { name: "Volkswagen", count: "Specialist" },
-  { name: "BMW", count: "Specialist" },
-  { name: "Diagnostics", count: "Mobile" },
-  { name: "Servicing", count: "On-site" },
-  { name: "Repairs", count: "All makes" },
+  { name: "Audi", count: "Specialist", Icon: Car },
+  { name: "Volkswagen", count: "Specialist", Icon: ShieldCheck },
+  { name: "BMW", count: "Specialist", Icon: Gauge },
+  { name: "Diagnostics", count: "Mobile", Icon: Search },
+  { name: "Servicing", count: "On-site", Icon: ClipboardList },
+  { name: "Repairs", count: "All makes", Icon: Wrench },
 ];
 
 const processSteps = [
   {
     title: "Personal Attention",
     text: "Tell us what your vehicle needs and we will guide you clearly from the first call.",
+    Icon: MessageCircle,
   },
   {
     title: "Receive Up Front Quote",
     text: "You get honest pricing and practical advice before any work begins.",
+    Icon: ClipboardList,
   },
   {
     title: "Mobile Appointment",
     text: "We come to your home, workplace or roadside location across Leicestershire.",
+    Icon: CalendarCheck,
   },
   {
     title: "Share Requirement",
     text: "Diagnostics, servicing and repairs are planned around your exact vehicle.",
+    Icon: Car,
   },
   {
     title: "Pay Post Service",
     text: "Work is completed carefully and explained clearly before payment.",
+    Icon: CheckCircle2,
   },
   {
     title: "Schedule Maintenance",
     text: "Keep your car safe and reliable with regular servicing and health checks.",
+    Icon: Wrench,
   },
 ];
+
+const featureIcons = [MapPin, ShieldCheck, Wrench, Sparkles];
+const serviceIcons = [ClipboardList, Gauge, Wrench, BatteryCharging, ShieldCheck, Sparkles];
 
 export function PageHero({ title, text, image }: { title: string; text: string; image: string }) {
   return (
@@ -56,8 +81,16 @@ export function ContactStrip() {
   return (
     <section className="bg-[var(--red)] py-5 text-white" aria-label="DSF Autocare contact and rating">
       <div className="section-container grid items-center gap-4 md:grid-cols-[1fr_1fr_auto]">
-        <a className="text-xl font-black" href={`tel:${contact.phone.replaceAll(" ", "")}`}>{contact.phone}</a>
-        <span className="text-xl font-black">***** 5 star Google rating</span>
+        <a className="flex items-center gap-3 text-xl font-black" href={`tel:${contact.phone.replaceAll(" ", "")}`}>
+          <Phone aria-hidden="true" className="size-6" fill="currentColor" />
+          {contact.phone}
+        </a>
+        <span className="flex items-center gap-2 text-xl font-black">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <Star aria-hidden="true" className="size-5" fill="currentColor" key={star} />
+          ))}
+          5 star Google rating
+        </span>
         <Link className="button bg-neutral-950 hover:bg-neutral-800" href="/contact">Book Now</Link>
       </div>
     </section>
@@ -79,6 +112,7 @@ export function BrandSearch() {
           {serviceBrands.map((item) => (
             <article className="relative grid min-h-28 place-items-center border border-[var(--line)] bg-white p-5 text-center shadow-sm" key={item.name}>
               <span className="absolute right-3 top-2 text-xs font-black text-[var(--muted)]">{item.count}</span>
+              <item.Icon aria-hidden="true" className="mb-2 size-9 text-[var(--red)]" strokeWidth={2.4} />
               <strong className="text-lg font-black">{item.name}</strong>
             </article>
           ))}
@@ -92,12 +126,17 @@ export function FeatureGrid() {
   return (
     <section className="section-y pt-4" aria-label="DSF Autocare highlights">
       <div className="section-container grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {features.map((item) => (
+        {features.map((item, index) => {
+          const Icon = featureIcons[index] ?? CheckCircle2;
+
+          return (
           <article className="min-h-44 border border-[var(--line)] bg-white p-7" key={item.title}>
+            <Icon aria-hidden="true" className="mb-5 size-10 text-[var(--red)]" strokeWidth={2.3} />
             <h2 className="mb-3 text-base font-black">{item.title}</h2>
             <p className="leading-7 text-[var(--muted)]">{item.text}</p>
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
@@ -115,11 +154,17 @@ export function FeaturedServices() {
           <Link className="bg-[var(--red)] px-6 py-4 text-sm font-black text-white transition hover:bg-[var(--red-dark)]" href="/services">All Services</Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service, index) => {
+            const Icon = serviceIcons[index] ?? Wrench;
+
+            return (
             <article className="border border-[var(--line)] bg-white shadow-sm" key={service.title}>
               <div className="relative">
                 <Image className="aspect-[1.55] w-full object-cover" src={service.image} alt="" width={720} height={465} sizes="(max-width: 980px) 50vw, 33vw" />
-                <span className="absolute left-0 top-0 bg-[var(--red)] px-3 py-2 text-xs font-black uppercase text-white">Mobile</span>
+                <span className="absolute left-0 top-0 inline-flex items-center gap-2 bg-[var(--red)] px-3 py-2 text-xs font-black uppercase text-white">
+                  <Icon aria-hidden="true" className="size-4" />
+                  Mobile
+                </span>
               </div>
               <div className="p-5">
                 <p className="mb-2 text-xs font-black uppercase text-[var(--red)]">DSF Autocare</p>
@@ -127,7 +172,8 @@ export function FeaturedServices() {
                 <p className="mt-3 line-clamp-3 leading-7 text-[var(--muted)]">{service.intro}</p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -192,7 +238,9 @@ export function WorkProcess() {
           <div className="grid gap-14">
             {processSteps.slice(0, 3).map((step) => (
               <article className="process-step" key={step.title}>
-                <span className="process-icon">+</span>
+                <span className="process-icon">
+                  <step.Icon aria-hidden="true" className="size-11" strokeWidth={1.9} />
+                </span>
                 <div>
                   <h3 className="text-2xl font-black">{step.title}</h3>
                   <p className="mt-4 max-w-sm text-lg font-semibold leading-8 text-neutral-400">{step.text}</p>
@@ -216,7 +264,9 @@ export function WorkProcess() {
           <div className="grid gap-14">
             {processSteps.slice(3).map((step) => (
               <article className="process-step lg:flex-row lg:text-left" key={step.title}>
-                <span className="process-icon">+</span>
+                <span className="process-icon">
+                  <step.Icon aria-hidden="true" className="size-11" strokeWidth={1.9} />
+                </span>
                 <div>
                   <h3 className="text-2xl font-black">{step.title}</h3>
                   <p className="mt-4 max-w-sm text-lg font-semibold leading-8 text-neutral-400">{step.text}</p>
@@ -260,7 +310,9 @@ export function ContactSection() {
           <h2 className="text-4xl font-black leading-tight sm:text-5xl">Ready to book mobile vehicle servicing?</h2>
           <span className="mt-5 block max-w-2xl leading-8 text-neutral-200">Call, email or message on WhatsApp and DSF Autocare will arrange a convenient appointment across Leicestershire.</span>
           <div className="mt-10 flex items-center gap-4 border-t border-white/15 pt-8">
-            <span className="grid size-14 place-items-center rounded-full bg-[var(--red)] text-2xl font-black">C</span>
+            <span className="grid size-14 place-items-center rounded-full bg-[var(--red)]">
+              <Phone aria-hidden="true" className="size-7" fill="currentColor" />
+            </span>
             <div>
               <h3 className="font-black">Have Any Question? Find Your Solution</h3>
               <a className="mt-1 block text-neutral-300" href={`tel:${contact.phone.replaceAll(" ", "")}`}>Call : {contact.phone}</a>
@@ -325,18 +377,25 @@ export function ServicesGrid() {
           <h2>Expandable service cards with the detail ready when you need it.</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service, index) => {
+            const Icon = serviceIcons[index] ?? Wrench;
+
+            return (
             <details className="service-card" key={service.title}>
               <summary className="grid cursor-pointer">
                 <Image className="aspect-[1.6] h-full w-full object-cover" src={service.image} alt="" width={720} height={450} sizes="(max-width: 980px) 50vw, 33vw" />
-                <span className="p-5 text-xl font-black">{service.title}</span>
+                <span className="flex items-center gap-3 p-5 text-xl font-black">
+                  <Icon aria-hidden="true" className="size-6 text-[var(--red)]" />
+                  {service.title}
+                </span>
               </summary>
               <p className="px-5 pb-4 leading-7 text-[var(--muted)]">{service.intro}</p>
               <ul className="columns-1 px-9 pb-6 text-sm leading-7 text-[var(--steel)] sm:columns-2">
                 {service.items.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </details>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

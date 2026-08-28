@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 import { contact } from "./dsf-data";
 
 const usefulLinks = [
@@ -48,10 +50,9 @@ export function Footer() {
             height={75}
           />
           <div className="flex gap-5 text-lg font-black" aria-label="Social links">
-            <a href={contact.facebook} aria-label="DSF Autocare on Facebook">f</a>
-            <a href={`https://wa.me/${contact.whatsapp}`} aria-label="Message DSF Autocare on WhatsApp">w</a>
-            <a href={`mailto:${contact.email}`} aria-label="Email DSF Autocare">@</a>
-            <a href="/contact" aria-label="Contact DSF Autocare">c</a>
+            <a href={contact.facebook} aria-label="DSF Autocare on Facebook"><FaFacebookF aria-hidden="true" /></a>
+            <a href={`https://wa.me/${contact.whatsapp}`} aria-label="Message DSF Autocare on WhatsApp"><FaWhatsapp aria-hidden="true" /></a>
+            <a href={`mailto:${contact.email}`} aria-label="Email DSF Autocare"><Mail aria-hidden="true" className="size-[1em]" /></a>
           </div>
         </div>
 
@@ -63,9 +64,9 @@ export function Footer() {
               your door across Leicestershire.
             </p>
             <ul className="grid gap-3 text-sm font-semibold text-neutral-300">
-              <li><span className="footer-icon">●</span>{contact.location}</li>
-              <li><span className="footer-icon">●</span>{contact.phone}</li>
-              <li><span className="footer-icon">●</span>{contact.email}</li>
+              <li className="flex items-center gap-3"><MapPin aria-hidden="true" className="footer-icon" />{contact.location}</li>
+              <li className="flex items-center gap-3"><Phone aria-hidden="true" className="footer-icon" />{contact.phone}</li>
+              <li className="flex items-center gap-3"><Mail aria-hidden="true" className="footer-icon" />{contact.email}</li>
             </ul>
           </div>
 
