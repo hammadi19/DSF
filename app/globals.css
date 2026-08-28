@@ -177,14 +177,12 @@
 
   .map-panel {
     aspect-ratio: 1.55;
-    background:
-      linear-gradient(135deg, rgba(228, 32, 37, 0.1), rgba(255, 255, 255, 0.02)),
-      radial-gradient(circle at 52% 50%, rgba(228, 32, 37, 0.28), transparent 34%);
+    background: #111111;
     @apply relative min-h-[360px] overflow-hidden border border-white/20;
   }
 
   .county-ring {
-    @apply absolute flex items-center justify-center border-4 border-[var(--red)];
+    @apply absolute z-10 flex items-center justify-center border-4 border-[var(--red)];
     border-radius: 48% 38% 46% 40%;
     inset: 18% 24% 16% 26%;
     transform: rotate(-8deg);
@@ -196,7 +194,7 @@
   }
 
   .town {
-    @apply absolute rounded-full bg-white/90 px-3 py-2 text-xs font-semibold not-italic text-neutral-950;
+    @apply absolute z-20 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold not-italic text-neutral-950 shadow-lg;
   }
 
   .town-1 { left: 45%; top: 44%; }

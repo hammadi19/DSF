@@ -290,6 +290,14 @@ export function ServiceArea() {
           <span className="mt-5 block max-w-xl leading-8 text-neutral-300">Based in Shepshed, DSF Autocare covers appointments at homes, workplaces and roadside locations across the county.</span>
         </div>
         <div className="map-panel" aria-label="Leicestershire service area">
+          <Image
+            className="object-cover opacity-35"
+            src="/assets/dsf/landing-2.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 100vw, 60vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/55 to-[rgba(219,45,46,0.28)]" />
           <div className="county-ring"><span>Leicestershire</span></div>
           {towns.map((town, index) => (
             <em key={town} className={`town town-${index + 1}`}>{town}</em>
