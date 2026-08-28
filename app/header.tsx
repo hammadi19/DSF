@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Search } from "lucide-react";
+import { Phone } from "lucide-react";
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 import { contact } from "./dsf-data";
 
@@ -28,9 +28,6 @@ export function Header() {
           <Link className="header-link" href="/contact">Contact Us</Link>
         </nav>
         <div className="flex flex-wrap items-center gap-5 lg:justify-end">
-          <button className="hidden xl:block" type="button" aria-label="Search">
-            <Search aria-hidden="true" className="size-6" strokeWidth={3} />
-          </button>
           <div className="hidden items-center gap-3 2xl:flex" aria-label="Social links">
             <a className="header-social" href={contact.facebook} aria-label="DSF Autocare on Facebook">
               <FaFacebookF aria-hidden="true" />
