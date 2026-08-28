@@ -229,15 +229,13 @@ export function WhyChoose() {
           <p className="eyebrow">Why Choose DSF Auto Care</p>
           <h2>Straight answers, careful workmanship, and the workshop brought to you.</h2>
         </div>
-        <div className="flex snap-x gap-7 overflow-x-auto pb-5">
+        <div className="why-carousel flex snap-x gap-7 overflow-x-auto pb-5">
           {whyChoose.map((item, index) => (
-            <details key={item.title} className="why-card" open={index === 0}>
-              <summary className="grid cursor-pointer gap-7">
-                <span className="grid size-[70px] place-items-center rounded-full border-[3px] border-[var(--red)] text-2xl font-semibold text-[var(--red)]">{index + 1}</span>
-                <strong className="text-2xl font-semibold leading-tight">{item.title}</strong>
-              </summary>
-              <p className="mt-8 text-xl leading-9 text-[var(--muted)]">{item.text}</p>
-            </details>
+            <article key={item.title} className="why-card">
+              <span className="grid size-[70px] place-items-center rounded-full border-[3px] border-[var(--red)] text-2xl font-semibold text-[var(--red)]">{index + 1}</span>
+              <span className="text-base font-semibold uppercase tracking-wide text-[var(--steel)]">Car care detail</span>
+              <strong className="text-2xl font-semibold leading-tight">{item.title}</strong>
+            </article>
           ))}
         </div>
       </div>

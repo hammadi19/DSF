@@ -117,23 +117,24 @@
   }
 
   .why-card {
-    @apply aspect-square shrink-0 snap-start overflow-y-auto border border-[var(--line)] bg-white p-8 transition duration-500 open:border-[var(--red)] open:shadow-2xl;
+    @apply aspect-square shrink-0 snap-start border border-[var(--line)] bg-white p-8 transition duration-500 hover:border-[var(--red)];
     width: 82vw;
   }
 
-  .why-card summary,
+  .why-carousel {
+    scrollbar-width: none;
+  }
+
+  .why-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
   .service-card summary {
     list-style: none;
   }
 
-  .why-card summary::-webkit-details-marker,
   .service-card summary::-webkit-details-marker {
     display: none;
-  }
-
-  .why-card summary::after {
-    @apply text-base font-semibold uppercase tracking-wide text-[var(--steel)];
-    content: "Car care detail";
   }
 
   .service-card {
