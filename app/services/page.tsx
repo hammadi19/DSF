@@ -1,8 +1,8 @@
-import { ContactSection, PageHero, ServicesGrid, Shell } from "../components";
+import { ContactSection, PageHero, ServicesGrid } from "../components";
 
 export default function ServicesPage() {
   return (
-    <Shell>
+    <>
       <PageHero
         title="Our Services"
         text="Servicing, diagnostics, repairs, batteries, brakes, suspension and specialist feature coding."
@@ -10,6 +10,6 @@ export default function ServicesPage() {
       />
       <ServicesGrid />
       <ContactSection />
-    </Shell>
+    </>
   );
 }
