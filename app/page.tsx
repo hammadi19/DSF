@@ -50,14 +50,18 @@ export default function Home() {
               <Link className="ml-4 text-[var(--red)]" href="/about">Click here +</Link>
             </div>
           </div>
-          <form className="hidden rounded-lg border border-white/70 bg-white/90 p-10 text-[var(--foreground)] shadow-2xl backdrop-blur-md lg:grid lg:gap-4">
-            <h2 className="mb-3 text-center text-[30px] font-medium leading-10">Find Your Mobile Service</h2>
-            <select aria-label="Select vehicle make"><option>Vehicle make</option><option>Audi</option><option>Volkswagen</option><option>BMW</option><option>Other</option></select>
-            <select aria-label="Select service"><option>Service required</option><option>Servicing</option><option>Diagnostics</option><option>Brakes</option><option>Battery</option></select>
-            <select aria-label="Select location"><option>Your location</option><option>Shepshed</option><option>Leicester</option><option>Loughborough</option><option>Elsewhere in Leicestershire</option></select>
-            <select aria-label="Select appointment"><option>Appointment type</option><option>Home</option><option>Workplace</option><option>Roadside</option></select>
-            <select aria-label="Select vehicle specialist"><option>Specialist support</option><option>Audi</option><option>Volkswagen</option><option>BMW</option><option>All makes</option></select>
-            <Link className="button mt-2 w-full" href="/contact">Search Availability</Link>
+          <form className="hero-form hidden text-[var(--foreground)] lg:grid">
+            <span className="mx-auto mb-2 h-1 w-16 bg-[var(--red)]" />
+            <h2 className="text-center text-[30px] font-medium leading-10">Find Your Mobile Service</h2>
+            <p className="mb-3 text-center text-sm font-medium text-neutral-600">Tell us what you need and we will come to you.</p>
+            <div className="grid gap-3.5">
+              <select aria-label="Select vehicle make"><option>Vehicle make</option><option>Audi</option><option>Volkswagen</option><option>BMW</option><option>Other</option></select>
+              <select aria-label="Select service"><option>Service required</option><option>Servicing</option><option>Diagnostics</option><option>Brakes</option><option>Battery</option></select>
+              <select aria-label="Select location"><option>Your location</option><option>Shepshed</option><option>Leicester</option><option>Loughborough</option><option>Elsewhere in Leicestershire</option></select>
+              <select aria-label="Select appointment"><option>Appointment type</option><option>Home</option><option>Workplace</option><option>Roadside</option></select>
+              <select aria-label="Select vehicle specialist"><option>Specialist support</option><option>Audi</option><option>Volkswagen</option><option>BMW</option><option>All makes</option></select>
+            </div>
+            <Link className="button mt-5 w-full py-4 text-base" href="/contact">Search Availability</Link>
           </form>
         </div>
       </section>

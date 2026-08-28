@@ -104,6 +104,15 @@
     @apply col-start-2 block border-l border-white/35 pl-4 text-lg font-semibold leading-tight;
   }
 
+  .hero-form {
+    @apply relative rounded-lg border border-white/55 bg-white/50 p-9 shadow-2xl backdrop-blur-xl;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero-form select {
+    @apply min-h-[58px] border-white/70 bg-white/80 px-5 text-base font-medium shadow-sm backdrop-blur transition duration-500 hover:border-[var(--red)] focus:border-[var(--red)] focus:bg-white;
+  }
+
   .process-step {
     @apply flex items-start gap-7;
   }
