@@ -113,7 +113,7 @@
   }
 
   .process-car {
-    @apply relative z-10 h-[720px] w-[330px] overflow-hidden rounded-[46%] shadow-2xl max-lg:h-[520px] max-lg:w-[260px];
+    @apply relative z-10 h-[720px] w-[250px] max-lg:h-[520px] max-lg:w-[175px];
   }
 
   .why-card {

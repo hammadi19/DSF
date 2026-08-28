@@ -249,14 +249,13 @@ export function WorkProcess() {
             ))}
           </div>
           <div className="relative mx-auto flex min-h-[720px] w-full max-w-[420px] items-center justify-center max-lg:min-h-[520px]">
-            <div className="absolute inset-x-20 inset-y-0 rounded-full bg-gradient-to-b from-neutral-100 via-white to-neutral-100" />
             <div className="process-car">
               <Image
-                className="h-full w-full object-cover"
-                src="/assets/dsf/landing-2.jpg"
+                className="h-full w-full object-contain"
+                src="/assets/dsf/car-top.png"
                 alt=""
-                width={420}
-                height={720}
+                width={363}
+                height={1079}
                 priority
               />
             </div>
