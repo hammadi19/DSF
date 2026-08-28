@@ -158,20 +158,20 @@ export function StatsBand() {
 
 export function WhyChoose() {
   return (
-    <section className="section-y">
+    <section className="section-y bg-white">
       <div className="section-container">
-        <div className="section-heading">
+        <div className="section-heading mx-auto text-center">
           <p className="eyebrow">Why Choose DSF Auto Care</p>
           <h2>Straight answers, careful workmanship, and the workshop brought to you.</h2>
         </div>
-        <div className="grid items-start gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid items-start gap-7 md:grid-cols-2 xl:grid-cols-5">
           {whyChoose.map((item, index) => (
             <details key={item.title} className="why-card" open={index === 0}>
-              <summary className="grid cursor-pointer gap-4">
-                <span className="grid size-12 place-items-center rounded-full border-2 border-[var(--red)] text-xl font-black text-[var(--red)]">{index + 1}</span>
-                <strong>{item.title}</strong>
+              <summary className="grid cursor-pointer gap-7">
+                <span className="grid size-[70px] place-items-center rounded-full border-[3px] border-[var(--red)] text-2xl font-black text-[var(--red)]">{index + 1}</span>
+                <strong className="text-2xl font-black leading-tight">{item.title}</strong>
               </summary>
-              <p className="mt-4 leading-7 text-[var(--muted)]">{item.text}</p>
+              <p className="mt-8 text-xl leading-9 text-[var(--muted)]">{item.text}</p>
             </details>
           ))}
         </div>
@@ -281,9 +281,9 @@ export function ContactSection() {
 
 export function ArticleCards() {
   const articles = [
-    { title: "When Your Vehicle Needs Diagnostics", image: "/assets/dsf/diagnostics.webp" },
-    { title: "Keeping Brakes Safe Between Services", image: "/assets/dsf/brakes.jpg" },
-    { title: "Why Regular Oil Changes Matter", image: "/assets/dsf/landing-3.jpg" },
+    { title: "When Your Vehicle Needs Diagnostics", image: "/assets/dsf/diagnostics.webp", month: "Aug" },
+    { title: "Keeping Brakes Safe Between Services", image: "/assets/dsf/brakes.jpg", month: "Sep" },
+    { title: "Why Regular Oil Changes Matter", image: "/assets/dsf/landing-3.jpg", month: "Oct" },
   ];
 
   return (
@@ -293,17 +293,20 @@ export function ArticleCards() {
           <h2 className="text-4xl font-black leading-tight">Our Recent News & Articles</h2>
           <p className="mt-4 leading-7 text-[var(--muted)]">Helpful maintenance notes and mobile service reminders from DSF Autocare.</p>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {articles.map((article) => (
-            <article className="border border-[var(--line)] bg-white" key={article.title}>
+            <article className="blog-card" key={article.title}>
               <div className="relative">
-                <Image className="aspect-[1.8] w-full object-cover" src={article.image} alt="" width={640} height={360} />
-                <span className="absolute right-4 top-0 bg-[var(--red)] px-4 py-3 text-center text-sm font-black text-white">DSF<br />Tip</span>
+                <Image className="aspect-[2.08] w-full object-cover" src={article.image} alt="" width={760} height={365} />
+                <span className="blog-date">
+                  <strong>17</strong>
+                  {article.month}
+                </span>
               </div>
-              <div className="p-5">
-                <p className="text-xs font-bold uppercase text-[var(--muted)]">Vehicle Care</p>
-                <h3 className="mt-3 text-lg font-black">{article.title}</h3>
-                <Link className="mt-4 inline-block text-sm font-black text-[var(--red)]" href="/services">Read More +</Link>
+              <div className="px-10 py-12">
+                <p className="text-base font-black uppercase text-neutral-400">Vehicle Care</p>
+                <h3 className="mt-6 text-3xl font-black leading-tight">{article.title}</h3>
+                <Link className="mt-9 inline-flex items-center gap-4 text-xl font-black text-[var(--red)]" href="/services">Read More <span>-&gt;</span></Link>
               </div>
             </article>
           ))}

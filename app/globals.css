@@ -103,7 +103,7 @@
   }
 
   .why-card {
-    @apply min-h-48 border border-[var(--line)] bg-white p-5 transition open:border-[var(--red)] open:shadow-xl;
+    @apply min-h-[260px] border border-[var(--line)] bg-white p-8 transition open:border-[var(--red)] open:shadow-2xl;
   }
 
   .why-card summary,
@@ -117,12 +117,24 @@
   }
 
   .why-card summary::after {
-    @apply text-xs font-black uppercase text-[var(--steel)];
+    @apply text-lg font-black uppercase text-[var(--steel)];
     content: "Car care detail";
   }
 
   .service-card {
     @apply overflow-hidden border border-[var(--line)] bg-white open:border-[var(--red)];
+  }
+
+  .blog-card {
+    @apply overflow-hidden border border-[var(--line)] bg-white;
+  }
+
+  .blog-date {
+    @apply absolute right-8 top-8 grid size-36 place-items-center bg-[var(--red)] text-center text-3xl font-black leading-none text-white;
+  }
+
+  .blog-date strong {
+    @apply block text-6xl leading-none;
   }
 
   .footer-title {
