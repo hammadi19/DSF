@@ -39,9 +39,9 @@ export function Header() {
               <FaWhatsapp aria-hidden="true" />
             </a>
           </div>
-          <a className="hidden items-center gap-4 xl:flex" href={`tel:${contact.phone.replaceAll(" ", "")}`}>
-            <span className="grid size-14 place-items-center rounded-full bg-[var(--red)] text-white">
-              <Phone aria-hidden="true" className="size-8" fill="currentColor" strokeWidth={2.5} />
+          <a className="hidden items-center gap-3 xl:flex" href={`tel:${contact.phone.replaceAll(" ", "")}`}>
+            <span className="header-social">
+              <Phone aria-hidden="true" className="size-4" fill="currentColor" strokeWidth={2.5} />
             </span>
             <span className="grid text-sm font-bold leading-tight text-neutral-200">
               Have any Questions?
