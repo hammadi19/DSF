@@ -90,6 +90,37 @@
     content: "v";
   }
 
+  .search-button {
+    @apply relative size-7;
+  }
+
+  .search-button::before {
+    @apply absolute left-1 top-1 size-3.5 rounded-full border-2 border-white;
+    content: "";
+  }
+
+  .search-button::after {
+    @apply absolute bottom-1 right-1 h-2.5 w-0.5 rotate-[-45deg] bg-white;
+    content: "";
+  }
+
+  .hero-cta {
+    @apply grid min-w-52 grid-cols-[auto_1fr] items-center gap-4 bg-[var(--red)] px-7 py-4 text-white transition hover:bg-[var(--red-dark)];
+  }
+
+  .hero-cta::before {
+    @apply grid size-10 place-items-center border-r border-white/35 pr-4 text-2xl font-black;
+    content: "+";
+  }
+
+  .hero-cta span {
+    @apply text-sm font-black leading-tight;
+  }
+
+  .hero-cta strong {
+    @apply block text-xl leading-tight;
+  }
+
   .process-step {
     @apply flex items-start gap-7;
   }
