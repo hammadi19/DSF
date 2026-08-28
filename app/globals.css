@@ -117,8 +117,17 @@
   }
 
   .why-card {
-    @apply aspect-square shrink-0 snap-start border border-[var(--line)] bg-white p-8 transition duration-500 hover:border-[var(--red)];
+    @apply relative grid aspect-square shrink-0 snap-start overflow-hidden border border-[var(--line)] bg-white p-8 transition duration-500 hover:border-[var(--red)] hover:bg-[var(--red)];
     width: 82vw;
+  }
+
+  .why-card::before {
+    @apply pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[var(--red)]/10 transition duration-500;
+    content: "";
+  }
+
+  .why-card:hover::before {
+    @apply bg-white/10;
   }
 
   .why-carousel {
