@@ -17,7 +17,7 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-[820px] overflow-hidden">
+      <section className="relative min-h-[760px] overflow-hidden lg:min-h-[820px]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src="/assets/dsf/landing-video.mp4"
@@ -28,11 +28,11 @@ export default function Home() {
           playsInline
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/15" />
-        <div className="section-container absolute inset-x-0 top-[54%] z-10 grid -translate-y-1/2 items-center gap-12 text-white lg:grid-cols-[1fr_470px]">
+        <div className="section-container absolute inset-x-0 top-[54%] z-10 grid -translate-y-1/2 items-center gap-10 text-white lg:grid-cols-[1fr_470px] lg:gap-12">
           <div className="max-w-4xl">
-            <h1 className="text-[44px] font-medium leading-[46px] sm:text-[60px] sm:leading-[62px] lg:text-[80px] lg:leading-[82px]">Mobile vehicle servicing & maintenance at your door step.</h1>
-            <p className="mt-[25px] border-l-[5px] border-[var(--red)] pl-[15px] text-[28px] font-medium leading-9 text-[var(--red)]">Across all of Leicestershire</p>
-            <p className="mt-5 max-w-3xl text-lg font-medium leading-8 text-white">Professional servicing, diagnostics, brakes, batteries and hidden feature coding brought to your home, workplace or roadside.</p>
+            <h1 className="max-w-3xl text-[39px] font-medium leading-[41px] sm:text-[56px] sm:leading-[58px] lg:text-[80px] lg:leading-[82px]">Mobile vehicle servicing & maintenance at your door step.</h1>
+            <p className="mt-5 border-l-[5px] border-[var(--red)] pl-[15px] text-[23px] font-medium leading-8 text-[var(--red)] sm:text-[28px] sm:leading-9 lg:mt-[25px]">Across all of Leicestershire</p>
+            <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-white sm:text-lg sm:leading-8">Professional servicing, diagnostics, brakes, batteries and hidden feature coding brought to your home, workplace or roadside.</p>
             <div className="mt-8 flex flex-wrap gap-5">
               <Link className="hero-cta" href="/contact">
                 <Phone aria-hidden="true" className="size-8" />
@@ -48,6 +48,13 @@ export default function Home() {
             <div className="mt-8 inline-flex border-b border-white/50 pb-3 text-lg font-bold">
               <span>Want to learn more about us?</span>
               <Link className="ml-4 text-[var(--red)]" href="/about">Click here +</Link>
+            </div>
+            <div className="mt-8 grid gap-3 rounded border border-white/15 bg-black/45 p-4 backdrop-blur-sm lg:hidden">
+              <strong className="text-lg font-semibold">Need mobile servicing?</strong>
+              <div className="flex flex-wrap gap-3">
+                <Link className="bg-[var(--red)] px-5 py-3 text-sm font-semibold text-white" href="/contact">Book Now</Link>
+                <a className="border border-white/25 px-5 py-3 text-sm font-semibold text-white" href={`tel:${contact.phone.replaceAll(" ", "")}`}>{contact.phone}</a>
+              </div>
             </div>
           </div>
           <form className="hero-form hidden text-[var(--foreground)] lg:grid">

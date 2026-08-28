@@ -27,7 +27,7 @@
   }
 
   body {
-    @apply m-0 bg-[var(--background)] text-[var(--foreground)];
+    @apply m-0 overflow-x-hidden bg-[var(--background)] text-[var(--foreground)];
     font-family: var(--font-outfit), Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 24px;
@@ -90,6 +90,14 @@
 
   .header-social {
     @apply grid size-9 place-items-center rounded-full border border-white/25 text-sm text-white transition hover:border-[var(--red)] hover:bg-[var(--red)] hover:text-white;
+  }
+
+  .mobile-drawer {
+    @apply absolute inset-x-0 top-full max-h-0 overflow-hidden border-t border-white/10 bg-neutral-950/95 text-white opacity-0 shadow-2xl transition-all duration-500;
+  }
+
+  .mobile-drawer-open {
+    @apply max-h-[520px] opacity-100;
   }
 
   .hero-cta {
@@ -230,13 +238,66 @@
 }
 
 @media (max-width: 640px) {
+  .section-container {
+    @apply px-4;
+  }
+
+  .section-y {
+    @apply py-14;
+  }
+
+  .section-heading h2 {
+    @apply text-[30px] leading-[38px];
+  }
+
+  .hero-cta {
+    @apply min-w-full;
+  }
+
+  .process-step {
+    @apply gap-4;
+  }
+
+  .process-icon {
+    @apply size-12;
+  }
+
+  .process-car {
+    @apply h-[460px] w-[155px];
+  }
+
+  .why-card {
+    @apply p-6;
+  }
+
+  .blog-date {
+    @apply h-16 w-16 text-sm;
+  }
+
+  .blog-date strong {
+    @apply text-2xl;
+  }
+
   .map-panel {
-    min-height: 390px;
+    min-height: 430px;
+    aspect-ratio: auto;
+  }
+
+  .county-ring {
+    inset: 20% 12% 22% 12%;
   }
 
   .town {
     @apply px-2 py-1.5 text-[0.7rem];
   }
+
+  .town-1 { left: 40%; top: 43%; }
+  .town-2 { left: 50%; top: 31%; }
+  .town-3 { left: 28%; top: 18%; }
+  .town-4 { left: 8%; top: 52%; }
+  .town-5 { left: 10%; top: 72%; }
+  .town-6 { left: 48%; top: 76%; }
+  .town-7 { right: 3%; top: 48%; }
 }
 
 @media (min-width: 640px) {
