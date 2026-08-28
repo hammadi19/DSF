@@ -79,19 +79,38 @@ export function PageHero({ title, text, image }: { title: string; text: string; 
 
 export function ContactStrip() {
   return (
-    <section className="bg-[var(--red)] py-5 text-white" aria-label="DSF Autocare contact and rating">
-      <div className="section-container grid items-center gap-4 md:grid-cols-[1fr_1fr_auto]">
-        <a className="flex items-center gap-3 text-xl font-semibold" href={`tel:${contact.phone.replaceAll(" ", "")}`}>
-          <Phone aria-hidden="true" className="size-6" fill="currentColor" />
-          {contact.phone}
+    <section className="relative bg-neutral-950 py-6 text-white" aria-label="DSF Autocare contact and rating">
+      <div className="absolute inset-x-0 top-0 h-1 bg-[var(--red)]" />
+      <div className="section-container grid items-center gap-4 lg:grid-cols-[1fr_1fr_auto]">
+        <a
+          className="group flex min-h-20 items-center gap-4 border border-white/10 bg-white/[0.06] px-6 transition duration-500 hover:border-[var(--red)] hover:bg-white/[0.09]"
+          href={`tel:${contact.phone.replaceAll(" ", "")}`}
+        >
+          <span className="grid size-12 place-items-center rounded-full bg-[var(--red)] text-white transition duration-500 group-hover:bg-white group-hover:text-[var(--red)]">
+            <Phone aria-hidden="true" className="size-5" fill="currentColor" />
+          </span>
+          <span className="grid">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">Call DSF Autocare</span>
+            <strong className="mt-1 text-2xl font-semibold leading-none">{contact.phone}</strong>
+          </span>
         </a>
-        <span className="flex items-center gap-2 text-xl font-semibold">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <Star aria-hidden="true" className="size-5" fill="currentColor" key={star} />
-          ))}
-          5 star Google rating
-        </span>
-        <Link className="button bg-neutral-950 hover:bg-neutral-800" href="/contact">Book Now</Link>
+        <div className="flex min-h-20 items-center gap-4 border border-white/10 bg-white/[0.06] px-6">
+          <span className="flex text-[var(--red)]">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <Star aria-hidden="true" className="size-5" fill="currentColor" key={star} />
+            ))}
+          </span>
+          <span className="grid">
+            <strong className="text-2xl font-semibold leading-none">5 star Google rating</strong>
+            <span className="mt-1 text-sm font-medium text-neutral-400">Trusted mobile servicing across Leicestershire</span>
+          </span>
+        </div>
+        <Link
+          className="inline-flex min-h-20 items-center justify-center bg-[var(--red)] px-10 text-base font-semibold text-white transition duration-500 hover:bg-white hover:text-neutral-950"
+          href="/contact"
+        >
+          Book Now
+        </Link>
       </div>
     </section>
   );
