@@ -211,30 +211,6 @@
     background: #111111;
     @apply relative min-h-[360px] overflow-hidden border border-white/20;
   }
-
-  .county-ring {
-    @apply absolute z-10 flex items-center justify-center border-4 border-[var(--red)];
-    border-radius: 48% 38% 46% 40%;
-    inset: 18% 24% 16% 26%;
-    transform: rotate(-8deg);
-  }
-
-  .county-ring span {
-    @apply text-xl font-semibold sm:text-4xl;
-    transform: rotate(8deg);
-  }
-
-  .town {
-    @apply absolute z-20 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold not-italic text-neutral-950 shadow-lg;
-  }
-
-  .town-1 { left: 45%; top: 44%; }
-  .town-2 { left: 55%; top: 32%; }
-  .town-3 { left: 30%; top: 22%; }
-  .town-4 { left: 20%; top: 52%; }
-  .town-5 { left: 14%; top: 66%; }
-  .town-6 { left: 56%; top: 70%; }
-  .town-7 { right: 10%; top: 48%; }
 }
 
 @media (max-width: 640px) {
@@ -283,21 +259,6 @@
     aspect-ratio: auto;
   }
 
-  .county-ring {
-    inset: 20% 12% 22% 12%;
-  }
-
-  .town {
-    @apply px-2 py-1.5 text-[0.7rem];
-  }
-
-  .town-1 { left: 40%; top: 43%; }
-  .town-2 { left: 50%; top: 31%; }
-  .town-3 { left: 28%; top: 18%; }
-  .town-4 { left: 8%; top: 52%; }
-  .town-5 { left: 10%; top: 72%; }
-  .town-6 { left: 48%; top: 76%; }
-  .town-7 { right: 3%; top: 48%; }
 }
 
 @media (min-width: 640px) {

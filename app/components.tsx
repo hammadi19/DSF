@@ -16,7 +16,7 @@ import {
   Star,
   Wrench,
 } from "lucide-react";
-import { contact, features, services, towns, whyChoose } from "./dsf-data";
+import { contact, features, services, whyChoose } from "./dsf-data";
 
 const serviceBrands = [
   { name: "Audi", count: "Specialist", Icon: Car },
@@ -314,17 +314,12 @@ export function ServiceArea() {
         </div>
         <div className="map-panel" aria-label="Leicestershire service area">
           <Image
-            className="object-cover opacity-35"
+            className="object-cover"
             src="/assets/dsf/landing-2.jpg"
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/55 to-[rgba(219,45,46,0.28)]" />
-          <div className="county-ring"><span>Leicestershire</span></div>
-          {towns.map((town, index) => (
-            <em key={town} className={`town town-${index + 1}`}>{town}</em>
-          ))}
         </div>
       </div>
     </section>
