@@ -14,27 +14,27 @@ const serviceBrands = [
 const processSteps = [
   {
     title: "Personal Attention",
-    text: "Tell us what your vehicle needs and we will guide you clearly.",
+    text: "Tell us what your vehicle needs and we will guide you clearly from the first call.",
   },
   {
     title: "Receive Up Front Quote",
-    text: "You get honest pricing before work begins.",
+    text: "You get honest pricing and practical advice before any work begins.",
   },
   {
     title: "Mobile Appointment",
-    text: "We come to your home, workplace or roadside location.",
+    text: "We come to your home, workplace or roadside location across Leicestershire.",
   },
   {
     title: "Share Requirement",
-    text: "Diagnostics, servicing and repairs are planned around your vehicle.",
+    text: "Diagnostics, servicing and repairs are planned around your exact vehicle.",
   },
   {
     title: "Pay Post Service",
-    text: "Work is completed carefully before payment is taken.",
+    text: "Work is completed carefully and explained clearly before payment.",
   },
   {
     title: "Schedule Maintenance",
-    text: "Keep your car safe and reliable with regular checks.",
+    text: "Keep your car safe and reliable with regular servicing and health checks.",
   },
 ];
 
@@ -182,34 +182,44 @@ export function WhyChoose() {
 
 export function WorkProcess() {
   return (
-    <section className="section-y bg-white">
+    <section className="bg-white py-16 lg:py-24">
       <div className="section-container">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <h2 className="text-4xl font-black leading-tight">Our Work Process</h2>
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-4xl font-black leading-tight sm:text-5xl">Our Work Process</h2>
           <p className="mt-4 leading-7 text-[var(--muted)]">A straightforward mobile service from first message to final vehicle health check.</p>
         </div>
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px_1fr]">
-          <div className="grid gap-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_420px_1fr]">
+          <div className="grid gap-14">
             {processSteps.slice(0, 3).map((step) => (
-              <article className="flex gap-4" key={step.title}>
-                <span className="grid size-12 shrink-0 place-items-center border-2 border-[var(--red)] text-xl font-black text-[var(--red)]">+</span>
+              <article className="process-step" key={step.title}>
+                <span className="process-icon">+</span>
                 <div>
-                  <h3 className="font-black">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{step.text}</p>
+                  <h3 className="text-2xl font-black">{step.title}</h3>
+                  <p className="mt-4 max-w-sm text-lg font-semibold leading-8 text-neutral-400">{step.text}</p>
                 </div>
               </article>
             ))}
           </div>
-          <div className="relative mx-auto aspect-[0.72] w-full max-w-[360px] overflow-hidden">
-            <Image className="h-full w-full rounded-full object-cover" src="/assets/dsf/landing-2.jpg" alt="" width={520} height={720} />
+          <div className="relative mx-auto flex min-h-[720px] w-full max-w-[420px] items-center justify-center max-lg:min-h-[520px]">
+            <div className="absolute inset-x-20 inset-y-0 rounded-full bg-gradient-to-b from-neutral-100 via-white to-neutral-100" />
+            <div className="process-car">
+              <Image
+                className="h-full w-full object-cover"
+                src="/assets/dsf/landing-2.jpg"
+                alt=""
+                width={420}
+                height={720}
+                priority
+              />
+            </div>
           </div>
-          <div className="grid gap-8">
+          <div className="grid gap-14">
             {processSteps.slice(3).map((step) => (
-              <article className="flex gap-4 lg:flex-row-reverse lg:text-right" key={step.title}>
-                <span className="grid size-12 shrink-0 place-items-center border-2 border-[var(--red)] text-xl font-black text-[var(--red)]">+</span>
+              <article className="process-step lg:flex-row lg:text-left" key={step.title}>
+                <span className="process-icon">+</span>
                 <div>
-                  <h3 className="font-black">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{step.text}</p>
+                  <h3 className="text-2xl font-black">{step.title}</h3>
+                  <p className="mt-4 max-w-sm text-lg font-semibold leading-8 text-neutral-400">{step.text}</p>
                 </div>
               </article>
             ))}

@@ -81,6 +81,27 @@
     @apply grid gap-2 text-sm font-bold text-[var(--steel)];
   }
 
+  .header-link {
+    @apply inline-flex items-center gap-1 whitespace-nowrap transition hover:text-[var(--red)];
+  }
+
+  .header-link::after {
+    @apply text-sm;
+    content: "v";
+  }
+
+  .process-step {
+    @apply flex items-start gap-7;
+  }
+
+  .process-icon {
+    @apply grid size-16 shrink-0 place-items-center text-5xl font-black leading-none text-[var(--red)];
+  }
+
+  .process-car {
+    @apply relative z-10 h-[720px] w-[330px] overflow-hidden rounded-[46%] shadow-2xl max-lg:h-[520px] max-lg:w-[260px];
+  }
+
   .why-card {
     @apply min-h-48 border border-[var(--line)] bg-white p-5 transition open:border-[var(--red)] open:shadow-xl;
   }

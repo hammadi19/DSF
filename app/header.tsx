@@ -4,30 +4,41 @@ import { contact } from "./dsf-data";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/95">
-      <div className="section-container grid items-center gap-4 py-3 lg:grid-cols-[auto_1fr_auto]">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#2d2d2d] text-white shadow-lg">
+      <div className="section-container grid min-h-[78px] items-center gap-5 py-3 lg:grid-cols-[220px_1fr_auto]">
         <Link href="/" aria-label="DSF Auto Care home">
           <Image
-            className="h-12 w-28 rounded object-cover sm:h-[58px] sm:w-[132px]"
+            className="h-12 w-36 rounded object-cover sm:h-[58px] sm:w-[170px]"
             src="/assets/dsf/logo.jpg"
             alt="DSF Auto Care"
-            width={132}
+            width={170}
             height={58}
             priority
           />
         </Link>
         <nav
-          className="flex gap-4 overflow-x-auto text-sm font-bold text-white lg:justify-center lg:gap-8"
+          className="flex gap-5 overflow-x-auto text-base font-bold lg:justify-center xl:gap-9"
           aria-label="Main navigation"
         >
-          <Link className="transition hover:text-[var(--red)]" href="/">Home</Link>
-          <Link className="transition hover:text-[var(--red)]" href="/about">About Us</Link>
-          <Link className="transition hover:text-[var(--red)]" href="/services">Our Services</Link>
-          <Link className="transition hover:text-[var(--red)]" href="/contact">Contact Us</Link>
+          <Link className="header-link text-[var(--red)]" href="/">Home</Link>
+          <Link className="header-link" href="/about">About Us</Link>
+          <Link className="header-link" href="/services">Our Services</Link>
+          <Link className="header-link" href="/contact">Contact Us</Link>
         </nav>
-        <div className="flex gap-2 lg:justify-end" aria-label="Social links">
-          <a className="grid size-9 place-items-center rounded-full bg-white font-black text-neutral-950" href={contact.facebook} aria-label="DSF Autocare on Facebook">f</a>
-          <a className="grid size-9 place-items-center rounded-full bg-[var(--green)] font-black text-white" href={`https://wa.me/${contact.whatsapp}`} aria-label="Message DSF Autocare on WhatsApp">W</a>
+        <div className="flex flex-wrap items-center gap-5 lg:justify-end">
+          <button className="hidden text-2xl font-black xl:block" type="button" aria-label="Search">
+            ?
+          </button>
+          <a className="hidden items-center gap-4 xl:flex" href={`tel:${contact.phone.replaceAll(" ", "")}`}>
+            <span className="text-5xl font-black leading-none text-[var(--red)]">C</span>
+            <span className="grid text-sm font-bold leading-tight text-neutral-200">
+              Have any Questions?
+              <strong className="mt-1 text-lg text-white">{contact.phone}</strong>
+            </span>
+          </a>
+          <Link className="bg-[var(--red)] px-7 py-3.5 font-black text-white transition hover:bg-[var(--red-dark)]" href="/contact">
+            Book Now
+          </Link>
         </div>
       </div>
     </header>
