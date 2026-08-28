@@ -17,7 +17,7 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-[820px] overflow-hidden rounded-b-[28px]">
+      <section className="relative min-h-[820px] overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src="/assets/dsf/landing-video.mp4"
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/15" />
         <div className="section-container absolute inset-x-0 top-[54%] z-10 grid -translate-y-1/2 items-center gap-12 text-white lg:grid-cols-[1fr_470px]">
           <div className="max-w-4xl">
-            <h1 className="text-[44px] font-medium leading-[54px] sm:text-[60px] sm:leading-[70px] lg:text-[80px] lg:leading-[90px]">Mobile vehicle servicing & maintenance at your door step.</h1>
+            <h1 className="text-[44px] font-medium leading-[46px] sm:text-[60px] sm:leading-[62px] lg:text-[80px] lg:leading-[82px]">Mobile vehicle servicing & maintenance at your door step.</h1>
             <p className="mt-[25px] border-l-[5px] border-[var(--red)] pl-[15px] text-[28px] font-medium leading-9 text-[var(--red)]">Across all of Leicestershire</p>
             <p className="mt-5 max-w-3xl text-lg font-medium leading-8 text-white">Professional servicing, diagnostics, brakes, batteries and hidden feature coding brought to your home, workplace or roadside.</p>
             <div className="mt-8 flex flex-wrap gap-5">

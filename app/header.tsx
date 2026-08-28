@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Phone, Search } from "lucide-react";
+import { Phone, Search } from "lucide-react";
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 import { contact } from "./dsf-data";
 
@@ -22,10 +22,10 @@ export function Header() {
           className="flex gap-5 overflow-x-auto lg:justify-center xl:gap-9"
           aria-label="Main navigation"
         >
-          <Link className="header-link text-[var(--red)]" href="/">Home <ChevronDown aria-hidden="true" className="size-4" /></Link>
-          <Link className="header-link" href="/about">About Us <ChevronDown aria-hidden="true" className="size-4" /></Link>
-          <Link className="header-link" href="/services">Our Services <ChevronDown aria-hidden="true" className="size-4" /></Link>
-          <Link className="header-link" href="/contact">Contact Us <ChevronDown aria-hidden="true" className="size-4" /></Link>
+          <Link className="header-link text-[var(--red)]" href="/">Home</Link>
+          <Link className="header-link" href="/about">About Us</Link>
+          <Link className="header-link" href="/services">Our Services</Link>
+          <Link className="header-link" href="/contact">Contact Us</Link>
         </nav>
         <div className="flex flex-wrap items-center gap-5 lg:justify-end">
           <button className="hidden xl:block" type="button" aria-label="Search">
