@@ -17,7 +17,7 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-[760px] overflow-hidden lg:min-h-[820px]">
+      <section className="relative min-h-[630px] overflow-hidden sm:min-h-[700px] lg:min-h-[820px]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src="/assets/dsf/landing-video.mp4"
@@ -28,12 +28,12 @@ export default function Home() {
           playsInline
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/15" />
-        <div className="section-container absolute inset-x-0 top-[54%] z-10 grid -translate-y-1/2 items-center gap-10 text-white lg:grid-cols-[1fr_470px] lg:gap-12">
+        <div className="section-container absolute inset-x-0 top-1/2 z-10 grid -translate-y-1/2 items-center gap-10 text-white lg:top-[54%] lg:grid-cols-[1fr_470px] lg:gap-12">
           <div className="max-w-4xl">
-            <h1 className="max-w-3xl text-[39px] font-medium leading-[41px] sm:text-[56px] sm:leading-[58px] lg:text-[80px] lg:leading-[82px]">Mobile vehicle servicing & maintenance at your door step.</h1>
-            <p className="mt-5 border-l-[5px] border-[var(--red)] pl-[15px] text-[23px] font-medium leading-8 text-[var(--red)] sm:text-[28px] sm:leading-9 lg:mt-[25px]">Across all of Leicestershire</p>
+            <h1 className="max-w-3xl text-[34px] font-medium leading-[37px] sm:text-[56px] sm:leading-[58px] lg:text-[80px] lg:leading-[82px]">Mobile vehicle servicing & maintenance at your door step.</h1>
+            <p className="mt-5 border-l-[5px] border-[var(--red)] pl-[15px] text-[20px] font-medium leading-7 text-[var(--red)] sm:text-[28px] sm:leading-9 lg:mt-[25px]">Across all of Leicestershire</p>
             <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-white sm:text-lg sm:leading-8">Professional servicing, diagnostics, brakes, batteries and hidden feature coding brought to your home, workplace or roadside.</p>
-            <div className="mt-8 flex flex-wrap gap-5">
+            <div className="mt-8 hidden flex-wrap gap-5 lg:flex">
               <Link className="hero-cta" href="/contact">
                 <Phone aria-hidden="true" className="size-8" />
                 <span>Call DSF</span>
@@ -45,7 +45,7 @@ export default function Home() {
                 <strong>Services</strong>
               </Link>
             </div>
-            <div className="mt-8 inline-flex border-b border-white/50 pb-3 text-lg font-bold">
+            <div className="mt-8 hidden border-b border-white/50 pb-3 text-lg font-bold sm:inline-flex">
               <span>Want to learn more about us?</span>
               <Link className="ml-4 text-[var(--red)]" href="/about">Click here +</Link>
             </div>

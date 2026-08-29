@@ -244,6 +244,11 @@
 
   .why-card {
     @apply p-6;
+    aspect-ratio: 1.12;
+  }
+
+  .why-card strong {
+    @apply text-[22px] leading-[29px];
   }
 
   .blog-date {
@@ -255,10 +260,9 @@
   }
 
   .map-panel {
-    min-height: 430px;
+    min-height: 240px;
     aspect-ratio: auto;
   }
-
 }
 
 @media (min-width: 640px) {

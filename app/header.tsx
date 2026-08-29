@@ -18,7 +18,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 -mb-[78px] border-b border-white/15 bg-black/50 text-white backdrop-blur-sm lg:-mb-[102px] lg:bg-black/35">
+    <header className="sticky top-0 z-50 border-b border-white/15 bg-neutral-950 text-white backdrop-blur-sm lg:-mb-[102px] lg:bg-black/35">
       <div className="section-container grid min-h-[78px] grid-cols-[auto_1fr_auto] items-center gap-4 py-3 lg:min-h-[102px] lg:grid-cols-[250px_1fr_auto] lg:py-4">
         <Link href="/" aria-label="DSF Auto Care home">
           <Image

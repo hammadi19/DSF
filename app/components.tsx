@@ -79,34 +79,34 @@ export function PageHero({ title, text, image }: { title: string; text: string; 
 
 export function ContactStrip() {
   return (
-    <section className="relative bg-neutral-950 py-6 text-white" aria-label="DSF Autocare contact and rating">
+    <section className="relative bg-neutral-950 py-5 text-white lg:py-6" aria-label="DSF Autocare contact and rating">
       <div className="absolute inset-x-0 top-0 h-1 bg-[var(--red)]" />
       <div className="section-container grid items-center gap-4 lg:grid-cols-[1fr_1fr_auto]">
         <a
-          className="group flex min-h-20 items-center gap-4 border border-white/10 bg-white/[0.06] px-6 transition duration-500 hover:border-[var(--red)] hover:bg-white/[0.09]"
+          className="group flex min-h-16 items-center gap-4 border border-white/10 bg-white/[0.06] px-4 transition duration-500 hover:border-[var(--red)] hover:bg-white/[0.09] sm:px-6 lg:min-h-20"
           href={`tel:${contact.phone.replaceAll(" ", "")}`}
         >
-          <span className="grid size-12 place-items-center rounded-full bg-[var(--red)] text-white transition duration-500 group-hover:bg-white group-hover:text-[var(--red)]">
+          <span className="grid size-10 place-items-center rounded-full bg-[var(--red)] text-white transition duration-500 group-hover:bg-white group-hover:text-[var(--red)] sm:size-12">
             <Phone aria-hidden="true" className="size-5" fill="currentColor" />
           </span>
           <span className="grid">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">Call DSF Autocare</span>
-            <strong className="mt-1 text-2xl font-semibold leading-none">{contact.phone}</strong>
+            <strong className="mt-1 text-xl font-semibold leading-none sm:text-2xl">{contact.phone}</strong>
           </span>
         </a>
-        <div className="flex min-h-20 items-center gap-4 border border-white/10 bg-white/[0.06] px-6">
-          <span className="flex text-[var(--red)]">
+        <div className="flex min-h-16 items-center gap-4 border border-white/10 bg-white/[0.06] px-4 sm:px-6 lg:min-h-20">
+          <span className="flex shrink-0 text-[var(--red)]">
             {[1, 2, 3, 4, 5].map((star) => (
-              <Star aria-hidden="true" className="size-5" fill="currentColor" key={star} />
+              <Star aria-hidden="true" className="size-4 sm:size-5" fill="currentColor" key={star} />
             ))}
           </span>
           <span className="grid">
-            <strong className="text-2xl font-semibold leading-none">5 star Google rating</strong>
+            <strong className="text-xl font-semibold leading-none sm:text-2xl">5 star Google rating</strong>
             <span className="mt-1 text-sm font-medium text-neutral-400">Trusted mobile servicing across Leicestershire</span>
           </span>
         </div>
         <Link
-          className="inline-flex min-h-20 items-center justify-center bg-[var(--red)] px-10 text-base font-semibold text-white transition duration-500 hover:bg-white hover:text-neutral-950"
+          className="inline-flex min-h-14 items-center justify-center bg-[var(--red)] px-8 text-base font-semibold text-white transition duration-500 hover:bg-white hover:text-neutral-950 lg:min-h-20 lg:px-10"
           href="/contact"
         >
           Book Now
@@ -118,20 +118,20 @@ export function ContactStrip() {
 
 export function BrandSearch() {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-10 lg:py-12">
       <div className="section-container">
-        <div className="mb-6 flex items-center justify-between gap-4">
+        <div className="mb-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
           <h2 className="text-xl font-semibold">I Want Search</h2>
           <div className="flex gap-2 text-xs font-semibold">
             <span className="bg-[var(--red)] px-4 py-2 text-white">Browse Service</span>
           </div>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4">
           {serviceBrands.map((item) => (
-            <article className="relative grid min-h-28 place-items-center border border-[var(--line)] bg-white p-5 text-center shadow-sm" key={item.name}>
+            <article className="relative grid min-h-24 place-items-center border border-[var(--line)] bg-white p-4 text-center shadow-sm sm:min-h-28 sm:p-5" key={item.name}>
               <span className="absolute right-3 top-2 text-xs font-semibold text-[var(--muted)]">{item.count}</span>
               <item.Icon aria-hidden="true" className="mb-2 size-9 text-[var(--red)]" strokeWidth={2.4} />
-              <strong className="text-lg font-semibold">{item.name}</strong>
+              <strong className="text-base font-semibold sm:text-lg">{item.name}</strong>
             </article>
           ))}
         </div>
@@ -148,9 +148,9 @@ export function FeatureGrid() {
           const Icon = featureIcons[index] ?? CheckCircle2;
 
           return (
-          <article className="min-h-44 border border-[var(--line)] bg-white p-7" key={item.title}>
+          <article className="min-h-40 border border-[var(--line)] bg-white p-5 sm:min-h-44 sm:p-7" key={item.title}>
             <Icon aria-hidden="true" className="mb-5 size-10 text-[var(--red)]" strokeWidth={2.3} />
-            <h2 className="mb-3 text-base font-semibold">{item.title}</h2>
+            <h2 className="mb-2 text-base font-semibold">{item.title}</h2>
             <p className="leading-7 text-[var(--muted)]">{item.text}</p>
           </article>
           );
@@ -166,7 +166,7 @@ export function FeaturedServices() {
       <div className="section-container">
         <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-3xl">
-            <h2 className="text-[36px] font-medium leading-[46px]">Our Featured Services</h2>
+            <h2 className="text-[30px] font-medium leading-[38px] sm:text-[36px] sm:leading-[46px]">Our Featured Services</h2>
             <p className="mt-4 leading-7 text-[var(--muted)]">Mobile servicing, repairs and diagnostics delivered with professional care across Leicestershire.</p>
           </div>
           <Link className="bg-[var(--red)] px-5 py-2 text-sm font-semibold leading-6 text-white transition duration-500 hover:bg-[var(--red-dark)]" href="/services">All Services</Link>
@@ -178,7 +178,7 @@ export function FeaturedServices() {
             return (
             <article className="border border-[var(--line)] bg-white shadow-sm" key={service.title}>
               <div className="relative">
-                <Image className="aspect-[1.55] w-full object-cover" src={service.image} alt="" width={720} height={465} sizes="(max-width: 980px) 50vw, 33vw" />
+                <Image className="aspect-[1.55] w-full object-cover" src={service.image} alt="" width={720} height={465} sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" />
                 <span className="absolute left-0 top-0 inline-flex items-center gap-2 bg-[var(--red)] px-3 py-2 text-xs font-semibold uppercase text-white">
                   <Icon aria-hidden="true" className="size-4" />
                   Mobile
@@ -244,27 +244,27 @@ export function WhyChoose() {
 
 export function WorkProcess() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-14 lg:py-24">
       <div className="section-container">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <div className="mx-auto mb-10 max-w-3xl text-center lg:mb-14">
           <h2 className="text-[36px] font-medium leading-[46px] sm:text-[40px] sm:leading-[50px]">Our Work Process</h2>
           <p className="mt-4 leading-7 text-[var(--muted)]">A straightforward mobile service from first message to final vehicle health check.</p>
         </div>
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_420px_1fr]">
-          <div className="grid gap-14">
+        <div className="grid items-start gap-8 md:grid-cols-2 lg:grid-cols-[1fr_420px_1fr] lg:items-center lg:gap-10">
+          <div className="grid gap-7 lg:gap-14">
             {processSteps.slice(0, 3).map((step) => (
               <article className="process-step" key={step.title}>
                 <span className="process-icon">
                   <step.Icon aria-hidden="true" className="size-11" strokeWidth={1.9} />
                 </span>
                 <div>
-                  <h3 className="text-2xl font-semibold">{step.title}</h3>
-                  <p className="mt-4 max-w-sm text-lg font-medium leading-8 text-neutral-400">{step.text}</p>
+                  <h3 className="text-xl font-semibold lg:text-2xl">{step.title}</h3>
+                  <p className="mt-2 max-w-sm text-base font-medium leading-7 text-neutral-400 lg:mt-4 lg:text-lg lg:leading-8">{step.text}</p>
                 </div>
               </article>
             ))}
           </div>
-          <div className="relative mx-auto flex min-h-[720px] w-full max-w-[420px] items-center justify-center max-lg:min-h-[520px]">
+          <div className="relative mx-auto hidden min-h-[720px] w-full max-w-[420px] items-center justify-center lg:flex">
             <div className="process-car">
               <Image
                 className="h-full w-full object-contain"
@@ -276,15 +276,15 @@ export function WorkProcess() {
               />
             </div>
           </div>
-          <div className="grid gap-14">
+          <div className="grid gap-7 lg:gap-14">
             {processSteps.slice(3).map((step) => (
               <article className="process-step lg:flex-row lg:text-left" key={step.title}>
                 <span className="process-icon">
                   <step.Icon aria-hidden="true" className="size-11" strokeWidth={1.9} />
                 </span>
                 <div>
-                  <h3 className="text-2xl font-semibold">{step.title}</h3>
-                  <p className="mt-4 max-w-sm text-lg font-medium leading-8 text-neutral-400">{step.text}</p>
+                  <h3 className="text-xl font-semibold lg:text-2xl">{step.title}</h3>
+                  <p className="mt-2 max-w-sm text-base font-medium leading-7 text-neutral-400 lg:mt-4 lg:text-lg lg:leading-8">{step.text}</p>
                 </div>
               </article>
             ))}
@@ -297,11 +297,11 @@ export function WorkProcess() {
 
 export function ServiceArea() {
   return (
-    <section className="bg-neutral-950 py-20 text-white">
+    <section className="bg-neutral-950 py-14 text-white lg:py-20">
       <div className="section-container grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <p className="eyebrow">Mobile across Leicestershire</p>
-          <h2 className="text-[36px] font-medium leading-[46px] sm:text-[40px] sm:leading-[50px]">We service all of Leicestershire.</h2>
+          <h2 className="text-[30px] font-medium leading-[38px] sm:text-[40px] sm:leading-[50px]">We service all of Leicestershire.</h2>
           <span className="mt-5 block max-w-xl leading-8 text-neutral-300">Based in Shepshed, DSF Autocare covers appointments at homes, workplaces and roadside locations across the county.</span>
         </div>
         <div className="map-panel" aria-label="Leicestershire service area">
@@ -320,12 +320,12 @@ export function ServiceArea() {
 
 export function ContactSection() {
   return (
-    <section className="relative overflow-hidden bg-neutral-950 py-20 text-white" id="contact">
+    <section className="relative overflow-hidden bg-neutral-950 py-14 text-white lg:py-20" id="contact">
       <Image className="object-cover opacity-20" src="/assets/dsf/landing-3.jpg" alt="" fill sizes="100vw" />
       <div className="section-container relative z-10 grid gap-12 lg:grid-cols-[1fr_minmax(320px,470px)]">
         <div className="self-center">
           <p className="eyebrow">Contact Us</p>
-          <h2 className="text-[36px] font-medium leading-[46px] sm:text-[40px] sm:leading-[50px]">Ready to book mobile vehicle servicing?</h2>
+          <h2 className="text-[30px] font-medium leading-[38px] sm:text-[40px] sm:leading-[50px]">Ready to book mobile vehicle servicing?</h2>
           <span className="mt-5 block max-w-2xl leading-8 text-neutral-200">Call, email or message on WhatsApp and DSF Autocare will arrange a convenient appointment across Leicestershire.</span>
           <div className="mt-10 flex items-center gap-4 border-t border-white/15 pt-8">
             <span className="grid size-14 place-items-center rounded-full bg-[var(--red)]">
@@ -337,7 +337,7 @@ export function ContactSection() {
             </div>
           </div>
         </div>
-        <form className="grid gap-4 rounded-md bg-white p-7 text-[var(--foreground)] shadow-2xl">
+        <form className="grid gap-4 rounded-md bg-white p-5 text-[var(--foreground)] shadow-2xl sm:p-7">
           <h3 className="text-xl font-semibold">Fulfill Your Requirements</h3>
           <label className="form-label">Name<input type="text" name="name" placeholder="Your name" /></label>
           <label className="form-label">Phone<input type="tel" name="phone" placeholder="Your phone number" /></label>
@@ -360,10 +360,10 @@ export function ArticleCards() {
     <section className="section-y bg-white">
       <div className="section-container">
         <div className="mx-auto mb-9 max-w-3xl text-center">
-          <h2 className="text-[36px] font-medium leading-[46px]">Our Recent News & Articles</h2>
+          <h2 className="text-[30px] font-medium leading-[38px] sm:text-[36px] sm:leading-[46px]">Our Recent News & Articles</h2>
           <p className="mt-4 leading-7 text-[var(--muted)]">Helpful maintenance notes and mobile service reminders from DSF Autocare.</p>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3 lg:gap-8">
           {articles.map((article) => (
             <article className="blog-card" key={article.title}>
               <div className="relative">
@@ -373,9 +373,9 @@ export function ArticleCards() {
                   {article.month}
                 </span>
               </div>
-              <div className="p-10">
+              <div className="p-6 sm:p-8 lg:p-10">
                 <p className="text-sm font-semibold uppercase text-neutral-400">Vehicle Care</p>
-                <h3 className="mt-6 text-[26px] font-medium leading-[34px]">{article.title}</h3>
+                <h3 className="mt-4 text-[22px] font-medium leading-[30px] lg:mt-6 lg:text-[26px] lg:leading-[34px]">{article.title}</h3>
                 <Link className="mt-9 inline-flex items-center gap-4 text-base font-medium leading-7 text-[var(--red)]" href="/services">Read More <span>-&gt;</span></Link>
               </div>
             </article>
