@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Wrench } from "lucide-react";
+import { FaApple, FaGooglePlay } from "react-icons/fa6";
 import { contact } from "./dsf-data";
 import {
   ArticleCards,
@@ -35,13 +35,13 @@ export default function Home() {
             <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-white sm:text-lg sm:leading-8">Professional servicing, diagnostics, brakes, batteries and hidden feature coding brought to your home, workplace or roadside.</p>
             <div className="mt-8 hidden flex-wrap gap-5 lg:flex">
               <Link className="hero-cta" href="/contact">
-                <Phone aria-hidden="true" className="size-8" />
-                <span>Call DSF</span>
-                <strong>{contact.phone}</strong>
+                <FaApple aria-hidden="true" className="size-8" />
+                <span>Book With</span>
+                <strong>DSF Autocare</strong>
               </Link>
               <Link className="hero-cta" href="/services">
-                <Wrench aria-hidden="true" className="size-8" />
-                <span>View Mobile</span>
+                <FaGooglePlay aria-hidden="true" className="size-8" />
+                <span>Explore Mobile</span>
                 <strong>Services</strong>
               </Link>
             </div>
