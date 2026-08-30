@@ -11,12 +11,52 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dsf-autocare.vercel.app"),
+  applicationName: "DSF Autocare",
   title: "DSF Autocare | Mobile Vehicle Servicing in Leicestershire",
   description:
     "Mobile vehicle servicing, diagnostics and repairs from DSF Autocare across Leicestershire.",
+  keywords: [
+    "DSF Autocare",
+    "mobile mechanic Leicestershire",
+    "mobile vehicle servicing",
+    "car diagnostics Leicestershire",
+    "Shepshed mechanic",
+  ],
+  creator: "DSF Autocare",
+  publisher: "DSF Autocare",
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    title: "DSF Autocare | Mobile Vehicle Servicing in Leicestershire",
+    description:
+      "Mobile vehicle servicing, diagnostics and repairs from DSF Autocare across Leicestershire.",
+    siteName: "DSF Autocare",
+    images: [
+      {
+        url: "/assets/dsf/logo.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "DSF Autocare",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DSF Autocare | Mobile Vehicle Servicing in Leicestershire",
+    description:
+      "Mobile vehicle servicing, diagnostics and repairs from DSF Autocare across Leicestershire.",
+    images: ["/assets/dsf/logo.jpg"],
   },
 };
 

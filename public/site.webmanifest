@@ -1,0 +1,23 @@
+{
+  "name": "DSF Autocare",
+  "short_name": "DSF Autocare",
+  "description": "Mobile vehicle servicing, diagnostics and repairs across Leicestershire.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#db2d2e",
+  "background_color": "#111111",
+  "display": "standalone",
+  "start_url": "/"
+}
