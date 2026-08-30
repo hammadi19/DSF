@@ -44,7 +44,7 @@ export function Footer() {
         <div className="flex flex-col gap-5 border-b border-white/15 py-7 md:flex-row md:items-center md:justify-between">
           <Image
             className="rounded"
-            src="/assets/dsf/logo.jpg"
+            src="/assets/dsf/logo-transparent.png"
             alt="DSF Auto Care"
             width={170}
             height={75}

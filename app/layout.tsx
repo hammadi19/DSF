@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "DSF Autocare",
     images: [
       {
-        url: "/assets/dsf/logo.jpg",
+        url: "/assets/dsf/logo-transparent.png",
         width: 1024,
         height: 1024,
         alt: "DSF Autocare",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "DSF Autocare | Mobile Vehicle Servicing in Leicestershire",
     description:
       "Mobile vehicle servicing, diagnostics and repairs from DSF Autocare across Leicestershire.",
-    images: ["/assets/dsf/logo.jpg"],
+    images: ["/assets/dsf/logo-transparent.png"],
   },
 };
 

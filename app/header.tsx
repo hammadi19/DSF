@@ -23,7 +23,7 @@ export function Header() {
         <Link href="/" aria-label="DSF Auto Care home">
           <Image
             className="h-12 w-36 rounded object-cover sm:w-40 lg:h-14 lg:w-44"
-            src="/assets/dsf/logo.jpg"
+            src="/assets/dsf/logo-transparent.png"
             alt="DSF Auto Care"
             width={176}
             height={56}
