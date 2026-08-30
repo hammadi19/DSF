@@ -43,11 +43,11 @@ export function Footer() {
       <div className="section-container relative z-10">
         <div className="flex flex-col gap-5 border-b border-white/15 py-7 md:flex-row md:items-center md:justify-between">
           <Image
-            className="rounded"
-            src="/assets/dsf/logo-transparent.png"
+            className="h-auto w-[170px]"
+            src="/assets/dsf/logo-transparent-wide.png"
             alt="DSF Auto Care"
             width={170}
-            height={75}
+            height={73}
           />
           <div className="flex gap-5 text-lg font-semibold" aria-label="Social links">
             <a href={contact.facebook} aria-label="DSF Autocare on Facebook"><FaFacebookF aria-hidden="true" /></a>

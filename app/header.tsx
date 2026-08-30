@@ -22,8 +22,8 @@ export function Header() {
       <div className="section-container grid min-h-[78px] grid-cols-[auto_1fr_auto] items-center gap-4 py-3 lg:min-h-[102px] lg:grid-cols-[250px_1fr_auto] lg:py-4">
         <Link href="/" aria-label="DSF Auto Care home">
           <Image
-            className="h-12 w-36 rounded object-cover sm:w-40 lg:h-14 lg:w-44"
-            src="/assets/dsf/logo-transparent.png"
+            className="h-12 w-36 object-contain sm:w-40 lg:h-14 lg:w-44"
+            src="/assets/dsf/logo-transparent-wide.png"
             alt="DSF Auto Care"
             width={176}
             height={56}
