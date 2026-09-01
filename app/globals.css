@@ -150,17 +150,12 @@
   }
 
   .why-card {
-    @apply relative grid aspect-square shrink-0 snap-start content-start gap-8 overflow-hidden border border-[var(--line)] bg-white p-8 transition duration-500 hover:border-[var(--red)] hover:bg-[var(--red)];
-    width: 82vw;
+    @apply relative grid aspect-square content-start gap-6 overflow-hidden border border-[var(--red)] bg-[var(--red)] p-6 transition duration-500 hover:-translate-y-1;
   }
 
   .why-card::before {
-    @apply pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-[var(--red)]/10 transition duration-500;
+    @apply pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-white/20;
     content: "";
-  }
-
-  .why-card:hover::before {
-    @apply bg-white/10;
   }
 
   .why-carousel {
@@ -280,12 +275,6 @@
 
 @media (min-width: 640px) {
   .why-card {
-    width: calc((100% - 28px) / 2);
-  }
-}
-
-@media (min-width: 1024px) {
-  .why-card {
-    width: calc((100% - 84px) / 4);
+    aspect-ratio: 1;
   }
 }

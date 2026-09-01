@@ -13,21 +13,6 @@ const usefulLinks = [
   "General Repairs",
 ];
 
-const recentPosts = [
-  {
-    title: "Time to book your next service",
-    image: "/assets/dsf/landing-3.jpg",
-  },
-  {
-    title: "The best time to check brakes",
-    image: "/assets/dsf/brakes.jpg",
-  },
-  {
-    title: "Replacing a weak battery",
-    image: "/assets/dsf/battery.webp",
-  },
-];
-
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-neutral-950 text-white">
@@ -56,7 +41,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-8 py-10 md:grid-cols-2 xl:grid-cols-[1.15fr_1fr_1.1fr_1fr]">
+        <div className="grid gap-8 py-10 md:grid-cols-2 xl:grid-cols-[1.35fr_1fr_1fr]">
           <div>
             <h2 className="footer-title">Contact Information</h2>
             <p className="mb-5 max-w-sm text-sm font-semibold leading-7 text-neutral-300">
@@ -79,27 +64,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h2 className="footer-title">Recent Posts</h2>
-            <div className="grid gap-3">
-              {recentPosts.map((post) => (
-                <Link className="grid grid-cols-[74px_1fr] gap-3 border-b border-white/10 pb-3 last:border-b-0" href="/services" key={post.title}>
-                  <Image
-                    className="h-12 w-[74px] object-cover"
-                    src={post.image}
-                    alt=""
-                    width={74}
-                    height={48}
-                  />
-                  <span>
-                    <strong className="block text-sm leading-5">{post.title}</strong>
-                    <em className="mt-1 block text-xs not-italic text-[var(--red)]">DSF Autocare</em>
-                  </span>
-                </Link>
-              ))}
-            </div>
           </div>
 
           <div>

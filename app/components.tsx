@@ -66,7 +66,7 @@ const serviceIcons = [ClipboardList, Gauge, Wrench, BatteryCharging, ShieldCheck
 export function PageHero({ title, text, image }: { title: string; text: string; image: string }) {
   return (
     <section className="relative min-h-[420px] overflow-hidden">
-      <Image src={image} alt="" fill priority sizes="100vw" />
+      <Image className="object-cover" src={image} alt="" fill priority sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
       <div className="section-container absolute inset-x-0 bottom-16 z-10 text-white">
         <p className="eyebrow">DSF Auto Care</p>
@@ -166,7 +166,7 @@ export function FeaturedServices() {
       <div className="section-container">
         <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-3xl">
-            <h2 className="text-[30px] font-medium leading-[38px] sm:text-[36px] sm:leading-[46px]">Our Featured Services</h2>
+            <h2 className="text-[30px] font-medium leading-[38px] sm:text-[36px] sm:leading-[46px]">Our Services</h2>
             <p className="mt-4 leading-7 text-[var(--muted)]">Mobile servicing, repairs and diagnostics delivered with professional care across Leicestershire.</p>
           </div>
           <Link className="bg-[var(--red)] px-5 py-2 text-sm font-semibold leading-6 text-white transition duration-500 hover:bg-[var(--red-dark)]" href="/services">All Services</Link>
@@ -207,7 +207,7 @@ export function StatsBand() {
             ["20+", "Years Experience"],
             ["5", "Star Google Rating"],
             ["100%", "Mobile Service"],
-            ["All", "Leicestershire"],
+            ["Covering", "Leicestershire"],
           ].map(([value, label]) => (
             <article className="border-white/25 px-5 py-3 md:border-r last:border-r-0" key={label}>
               <strong className="block text-3xl font-semibold">{value}</strong>
@@ -228,12 +228,12 @@ export function WhyChoose() {
           <p className="eyebrow">Why Choose DSF Auto Care</p>
           <h2>Straight answers, careful workmanship, and the workshop brought to you.</h2>
         </div>
-        <div className="why-carousel flex snap-x gap-7 overflow-x-auto pb-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {whyChoose.map((item, index) => (
             <article key={item.title} className="why-card group">
-              <span className="grid size-16 place-items-center rounded-full border-[3px] border-[var(--red)] text-2xl font-semibold text-[var(--red)] transition duration-500 group-hover:border-white group-hover:text-white">{index + 1}</span>
-              <strong className="block max-w-[12ch] text-[28px] font-semibold leading-[34px] transition duration-500 group-hover:text-white">{item.title}</strong>
-              <span className="h-1 w-14 bg-[var(--red)] transition duration-500 group-hover:bg-white" />
+              <span className="grid size-14 place-items-center rounded-full border-[3px] border-white text-xl font-semibold text-white">{index + 1}</span>
+              <strong className="block text-[20px] font-semibold leading-[26px] text-white xl:text-[22px] xl:leading-[28px]">{item.title}</strong>
+              <span className="h-1 w-14 bg-white" />
             </article>
           ))}
         </div>
