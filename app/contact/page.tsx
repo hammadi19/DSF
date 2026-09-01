@@ -25,11 +25,11 @@ export default function ContactPage() {
           </article>
           <article className="border border-[var(--line)] bg-white p-6">
             <h2 className="mb-3 text-base font-semibold">Service Area</h2>
-            <p className="leading-7 text-[var(--muted)]">All of Leicestershire</p>
+            <p className="leading-7 text-[var(--muted)]">Covering Leicestershire</p>
           </article>
         </div>
       </section>
-      <ServiceArea />
+      <ServiceArea mapImage="/assets/dsf/leicestershire-map.jpeg" mapStyle="map" />
       <ContactSection />
     </>
   );

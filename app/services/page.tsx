@@ -6,7 +6,7 @@ export default function ServicesPage() {
       <PageHero
         title="Our Services"
         text="Servicing, diagnostics, repairs, batteries, brakes, suspension and specialist feature coding."
-        image="/assets/dsf/cover-3.jpg"
+        image="/assets/dsf/services-hero.jpg"
       />
       <ServicesGrid />
       <ContactSection />

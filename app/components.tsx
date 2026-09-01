@@ -295,7 +295,13 @@ export function WorkProcess() {
   );
 }
 
-export function ServiceArea() {
+export function ServiceArea({
+  mapImage = "/assets/dsf/landing-2.jpg",
+  mapStyle = "photo",
+}: {
+  mapImage?: string;
+  mapStyle?: "photo" | "map";
+}) {
   return (
     <section className="bg-neutral-950 py-14 text-white lg:py-20">
       <div className="section-container grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
@@ -304,10 +310,10 @@ export function ServiceArea() {
           <h2 className="text-[30px] font-medium leading-[38px] sm:text-[40px] sm:leading-[50px]">We service all of Leicestershire.</h2>
           <span className="mt-5 block max-w-xl leading-8 text-neutral-300">Based in Shepshed, DSF Autocare covers appointments at homes, workplaces and roadside locations across the county.</span>
         </div>
-        <div className="map-panel" aria-label="Leicestershire service area">
+        <div className={`map-panel ${mapStyle === "map" ? "bg-white p-4 sm:p-8" : ""}`} aria-label="Leicestershire service area">
           <Image
-            className="object-cover"
-            src="/assets/dsf/landing-2.jpg"
+            className={mapStyle === "map" ? "object-contain p-4 sm:p-8" : "object-cover"}
+            src={mapImage}
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
