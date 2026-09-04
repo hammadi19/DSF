@@ -24,14 +24,14 @@ export default function AboutPage() {
             <strong className="block text-[28px] font-semibold leading-[38px] text-[var(--foreground)] sm:text-[36px] sm:leading-[46px]">
               From Shepshed to Leicester, Loughborough, Coalville, Ashby, Hinckley, Melton Mowbray and beyond, DSF Autocare is trusted by drivers across Leicestershire for convenient, professional vehicle servicing and repairs.
             </strong>
-            <div className="relative mt-8 overflow-hidden border border-[var(--line)]">
+            <div className="relative mt-8 overflow-hidden border border-[var(--line)] bg-white p-4 sm:p-8">
               <Image
-                className="aspect-[2.1] w-full object-cover"
-                src="/assets/dsf/cover-2.jpg"
+                className="mx-auto aspect-square w-full max-w-3xl object-contain"
+                src="/assets/dsf/leicestershire-map.jpeg"
                 alt=""
-                width={1200}
-                height={570}
-                sizes="(max-width: 1024px) 100vw, 1000px"
+                width={1024}
+                height={1044}
+                sizes="(max-width: 1024px) 100vw, 768px"
               />
             </div>
           </div>
