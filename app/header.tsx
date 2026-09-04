@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 import { useState } from "react";
@@ -16,6 +17,10 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActiveLink = (href: string) =>
+    href === "/" ? pathname === href : pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/15 bg-neutral-950 text-white backdrop-blur-sm lg:-mb-[102px] lg:bg-black/35">
@@ -35,7 +40,7 @@ export function Header() {
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
-            <Link className={`header-link ${link.href === "/" ? "text-[var(--red)]" : ""}`} href={link.href} key={link.href}>
+            <Link className={`header-link ${isActiveLink(link.href) ? "text-[var(--red)]" : ""}`} href={link.href} key={link.href}>
               {link.label}
             </Link>
           ))}
@@ -80,7 +85,7 @@ export function Header() {
       <div className={`mobile-drawer lg:hidden ${isOpen ? "mobile-drawer-open" : ""}`}>
         <nav className="section-container grid gap-2 pb-6 pt-2" aria-label="Mobile navigation">
           {navLinks.map((link) => (
-            <Link className="border border-white/10 bg-white/[0.06] px-5 py-4 text-lg font-medium transition hover:border-[var(--red)] hover:text-[var(--red)]" href={link.href} key={link.href} onClick={() => setIsOpen(false)}>
+            <Link className={`border px-5 py-4 text-lg font-medium transition hover:border-[var(--red)] hover:text-[var(--red)] ${isActiveLink(link.href) ? "border-[var(--red)] bg-[var(--red)] text-white" : "border-white/10 bg-white/[0.06]"}`} href={link.href} key={link.href} onClick={() => setIsOpen(false)}>
               {link.label}
             </Link>
           ))}
